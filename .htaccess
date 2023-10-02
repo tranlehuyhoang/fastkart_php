@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Chuyển hướng các yêu cầu không tồn tại đến clonesnew.com
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ../dam/client/home.php [L,R=301]
