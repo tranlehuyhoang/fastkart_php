@@ -685,42 +685,30 @@ if (isset($product1)) {
                                                                 </div>
 
                                                                 <div class="people-comment">
-                                                                    <a class="name" href="javascript:void(0)">Tracey</a>
+                                                                    <a class="name"
+                                                                        href="javascript:void(0)"><?php echo $result['name'] ?></a>
                                                                     <div class="date-time">
                                                                         <h6 class="text-content">14 Jan, 2022 at
                                                                             12.58 AM</h6>
 
                                                                         <div class="product-rating">
                                                                             <ul class="rating">
+                                                                                <?php for ($i = 1; $i <= 5; $i++) : ?>
                                                                                 <li>
+                                                                                    <?php if ($i <= $result['rate']) : ?>
                                                                                     <i data-feather="star"
                                                                                         class="fill"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i data-feather="star"
-                                                                                        class="fill"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i data-feather="star"
-                                                                                        class="fill"></i>
-                                                                                </li>
-                                                                                <li>
+                                                                                    <?php else : ?>
                                                                                     <i data-feather="star"></i>
+                                                                                    <?php endif; ?>
                                                                                 </li>
-                                                                                <li>
-                                                                                    <i data-feather="star"></i>
-                                                                                </li>
+                                                                                <?php endfor; ?>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="reply">
-                                                                        <p>Icing cookie carrot cake chocolate cake
-                                                                            sugar plum jelly-o danish. Dragée dragée
-                                                                            shortbread tootsie roll croissant muffin
-                                                                            cake I love gummi bears. Candy canes ice
-                                                                            cream caramels tiramisu marshmallow cake
-                                                                            shortbread candy canes cookie.<a
+                                                                        <p><?php echo $result['description'] ?><a
                                                                                 href="javascript:void(0)">Reply</a>
                                                                         </p>
                                                                     </div>
