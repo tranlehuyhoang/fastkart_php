@@ -1,6 +1,9 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.inc.php';
+if (isset($_SESSION['userid'])) {
+    echo "<script>window.location.href = './home.php';</script>";
+}
 ?>
 
 
@@ -72,8 +75,7 @@ include_once __DIR__ . '/../inc/_header.inc.php';
                             <div class="col-12">
                                 <div class="forgot-box">
                                     <div class="form-check ps-0 m-0 remember-box">
-                                        <input class="checkbox_animated check-box" type="checkbox"
-                                            id="flexCheckDefault">
+                                        <input class="checkbox_animated check-box" type="checkbox" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">I agree with
                                             <span>Terms</span> and <span>Privacy</span></label>
                                     </div>
@@ -93,17 +95,14 @@ include_once __DIR__ . '/../inc/_header.inc.php';
                     <div class="log-in-button">
                         <ul>
                             <li>
-                                <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin"
-                                    class="btn google-button w-100">
-                                    <img src="../public/assets_client/images/inner-page/google.png"
-                                        class="blur-up lazyloaded" alt="">
+                                <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin" class="btn google-button w-100">
+                                    <img src="../public/assets_client/images/inner-page/google.png" class="blur-up lazyloaded" alt="">
                                     Sign up with Google
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.facebook.com/" class="btn google-button w-100">
-                                    <img src="../public/assets_client/images/inner-page/facebook.png"
-                                        class="blur-up lazyloaded" alt=""> Sign up with Facebook
+                                    <img src="../public/assets_client/images/inner-page/facebook.png" class="blur-up lazyloaded" alt=""> Sign up with Facebook
                                 </a>
                             </li>
                         </ul>

@@ -8,6 +8,7 @@ include_once __DIR__ .  '/../controller/user.class.php';
 include_once __DIR__ .  '/../controller/cart.class.php';
 include_once __DIR__ .  '/../controller/checkout.class.php';
 include_once __DIR__ .  '/../controller/invoice.class.php';
+$invoiceclass = new invoice();
 
 // $user = new user();
 $categoryclass = new category();
@@ -17,7 +18,6 @@ $productclass = new product();
 $reviewclass = new review();
 $cartclass = new cart();
 $checkoutclass = new checkout();
-$invoiceclass = new invoice();
 
 $category = $categoryclass->show_category();
 $categorys = $categoryclass->show_category();
@@ -45,8 +45,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- bootstrap css -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="../public/assets_client/css/vendors/bootstrap.css">
@@ -93,8 +96,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <div class="header-offer">
                             <div class="notification-slider slick-initialized slick-slider slick-vertical">
                                 <div class="slick-list draggable" style="height: 18.3281px;">
-                                    <div class="slick-track" style="opacity: 1; height: 92px; transform: translate3d(0px, -36px, 0px); transition: transform 500ms ease 0s;">
-                                        <div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 818px;" tabindex="-1">
+                                    <div class="slick-track"
+                                        style="opacity: 1; height: 92px; transform: translate3d(0px, -36px, 0px); transition: transform 500ms ease 0s;">
+                                        <div class="slick-slide slick-cloned" data-slick-index="-1" id=""
+                                            aria-hidden="true" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6>Something you love is now on sale!
                                                     <a href="shop-left-sidebar.php" class="text-white" tabindex="-1">Buy
@@ -103,7 +108,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 818px;" tabindex="0">
+                                        <div class="slick-slide" data-slick-index="0" aria-hidden="true"
+                                            style="width: 818px;" tabindex="0">
                                             <div class="timer-notification">
                                                 <h6><strong class="me-1">Welcome to Fastkart!</strong>Wrap new
                                                     offers/gift
@@ -114,7 +120,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" style="width: 818px;" tabindex="-1">
+                                        <div class="slick-slide slick-current slick-active" data-slick-index="1"
+                                            aria-hidden="false" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6>Something you love is now on sale!
                                                     <a href="shop-left-sidebar.php" class="text-white" tabindex="-1">Buy
@@ -123,7 +130,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="slick-slide slick-cloned" data-slick-index="2" id="" aria-hidden="true" style="width: 818px;" tabindex="-1">
+                                        <div class="slick-slide slick-cloned" data-slick-index="2" id=""
+                                            aria-hidden="true" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6><strong class="me-1">Welcome to Fastkart!</strong>Wrap new
                                                     offers/gift
@@ -135,7 +143,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="slick-slide slick-cloned" data-slick-index="3" id="" aria-hidden="true" style="width: 818px;" tabindex="-1">
+                                        <div class="slick-slide slick-cloned" data-slick-index="3" id=""
+                                            aria-hidden="true" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6>Something you love is now on sale!
                                                     <a href="shop-left-sidebar.php" class="text-white" tabindex="-1">Buy
@@ -156,26 +165,31 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                         <ul class="about-list right-nav-about">
                             <li class="right-nav-list">
                                 <div class="dropdown theme-form-select">
-                                    <button class="btn dropdown-toggle" type="button" id="select-language" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src=" http://localhost:1002/assets_client/images/country/united-states.png" class="img-fluid blur-up lazyloaded" alt="">
+                                    <button class="btn dropdown-toggle" type="button" id="select-language"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src=" http://localhost:1002/assets_client/images/country/united-states.png"
+                                            class="img-fluid blur-up lazyloaded" alt="">
                                         <span>English</span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="select-language">
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)" id="english">
-                                                <img src=" http://localhost:1002/assets_client/images/country/united-kingdom.png" class="img-fluid blur-up lazyload" alt="">
+                                                <img src=" http://localhost:1002/assets_client/images/country/united-kingdom.png"
+                                                    class="img-fluid blur-up lazyload" alt="">
                                                 <span>English</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)" id="france">
-                                                <img src=" http://localhost:1002/assets_client/images/country/germany.png" class="img-fluid blur-up lazyload" alt="">
+                                                <img src=" http://localhost:1002/assets_client/images/country/germany.png"
+                                                    class="img-fluid blur-up lazyload" alt="">
                                                 <span>Germany</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)" id="chinese">
-                                                <img src=" http://localhost:1002/assets_client/images/country/turkish.png" class="img-fluid blur-up lazyload" alt="">
+                                                <img src=" http://localhost:1002/assets_client/images/country/turkish.png"
+                                                    class="img-fluid blur-up lazyload" alt="">
                                                 <span>Turki</span>
                                             </a>
                                         </li>
@@ -184,10 +198,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                             </li>
                             <li class="right-nav-list">
                                 <div class="dropdown theme-form-select">
-                                    <button class="btn dropdown-toggle" type="button" id="select-dollar" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn dropdown-toggle" type="button" id="select-dollar"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         <span>USD</span>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end sm-dropdown-menu" aria-labelledby="select-dollar">
+                                    <ul class="dropdown-menu dropdown-menu-end sm-dropdown-menu"
+                                        aria-labelledby="select-dollar">
                                         <li>
                                             <a class="dropdown-item" id="aud" href="javascript:void(0)">AUD</a>
                                         </li>
@@ -211,20 +227,26 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                 <div class="row">
                     <div class="col-12">
                         <div class="navbar-top">
-                            <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                            <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
                                 <span class="navbar-toggler-icon">
                                     <i class="fa-solid fa-bars"></i>
                                 </span>
                             </button>
-                            <a href="http://localhost:1002" class="web-logo nav-logo">
-                                <img src=" ../public/assets_client/images/logo/1.png" class="img-fluid blur-up lazyloaded" alt="">
+                            <a href="../client/home.php" class="web-logo nav-logo">
+                                <img src=" ../public/assets_client/images/logo/1.png"
+                                    class="img-fluid blur-up lazyloaded" alt="">
                             </a>
 
                             <div class="middle-box">
                                 <div class="location-box">
-                                    <button class="btn location-button" data-bs-toggle="modal" data-bs-target="#locationModal">
+                                    <button class="btn location-button" data-bs-toggle="modal"
+                                        data-bs-target="#locationModal">
                                         <span class="location-arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-map-pin">
                                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                                 <circle cx="12" cy="10" r="3"></circle>
                                             </svg>
@@ -236,9 +258,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                                 <div class="search-box">
                                     <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="I'm searching for..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <input type="search" class="form-control" placeholder="I'm searching for..."
+                                            aria-label="Recipient's username" aria-describedby="button-addon2">
                                         <button class="btn" type="button" id="button-addon2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-search">
                                                 <circle cx="11" cy="11" r="8"></circle>
                                                 <line x1="21" y1="21" x2="16.65" y2="16.65">
                                                 </line>
@@ -252,7 +278,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 <div class="search-full">
                                     <div class="input-group">
                                         <span class="input-group-text">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search font-light">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-search font-light">
                                                 <circle cx="11" cy="11" r="8"></circle>
                                                 <line x1="21" y1="21" x2="16.65" y2="16.65">
                                                 </line>
@@ -260,7 +289,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                         </span>
                                         <input type="text" class="form-control search-type" placeholder="Search here..">
                                         <span class="input-group-text close-search">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x font-light">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-x font-light">
                                                 <line x1="18" y1="6" x2="6" y2="18">
                                                 </line>
                                                 <line x1="6" y1="6" x2="18" y2="18">
@@ -274,7 +306,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <div class="search-box">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-search">
                                                         <circle cx="11" cy="11" r="8">
                                                         </circle>
                                                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -286,8 +321,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                     <li class="right-side">
                                         <a href="contact-us.php" class="delivery-login-box">
                                             <div class="delivery-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call">
-                                                    <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-phone-call">
+                                                    <path
+                                                        d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                                                     </path>
                                                 </svg>
                                             </div>
@@ -298,9 +337,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                         </a>
                                     </li>
                                     <li class="right-side">
-                                        <a href="http://localhost:1002/wishlist" class="btn p-0 position-relative header-wishlist">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
-                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                        <a href="../client/wishlist.php"
+                                            class="btn p-0 position-relative header-wishlist">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-heart">
+                                                <path
+                                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                                                 </path>
                                             </svg>
                                         </a>
@@ -308,10 +352,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                     <li class="right-side">
                                         <div class="onhover-dropdown header-badge">
                                             <button type="button" class="btn p-0 position-relative header-wishlist">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-shopping-cart">
                                                     <circle cx="9" cy="21" r="1"></circle>
                                                     <circle cx="20" cy="21" r="1"></circle>
-                                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
+                                                    <path
+                                                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
                                                     </path>
                                                 </svg>
                                                 <span class="position-absolute top-0 start-100 translate-middle badge">2
@@ -324,7 +372,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
                                                             <a href="product-left-thumbnail.php" class="drop-image">
-                                                                <img src=" http://localhost:1002/assets_client/images/vegetable/product/1.png" class="blur-up lazyloaded" alt="">
+                                                                <img src=" http://localhost:1002/assets_client/images/vegetable/product/1.png"
+                                                                    class="blur-up lazyloaded" alt="">
                                                             </a>
 
                                                             <div class="drop-contain">
@@ -342,7 +391,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
                                                             <a href="product-left-thumbnail.php" class="drop-image">
-                                                                <img src=" http://localhost:1002/assets_client/images/vegetable/product/2.png" class="blur-up lazyloaded" alt="">
+                                                                <img src=" http://localhost:1002/assets_client/images/vegetable/product/2.png"
+                                                                    class="blur-up lazyloaded" alt="">
                                                             </a>
 
                                                             <div class="drop-contain">
@@ -365,7 +415,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                 </div>
 
                                                 <div class="button-group">
-                                                    <a href="http://localhost:1002/cart" class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="http://localhost:1002/cart"
+                                                        class="btn btn-sm cart-button">View Cart</a>
                                                     <a href="checkout.php" class="btn btn-sm cart-button theme-bg-color
                                                     text-white">Checkout</a>
                                                 </div>
@@ -379,88 +430,94 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
 
                                     ?>
-                                        <?php
+                                    <?php
                                         if (isset($userdeetail)) {
                                             if ($userdeetail && $userdeetail->num_rows > 0) {
                                                 $i = 0;
                                                 while ($result = $userdeetail->fetch_assoc()) {
                                                     # code...
                                         ?>
-                                                    <li class="right-side onhover-dropdown">
-                                                        <div class="delivery-login-box">
-                                                            <div class="delivery-icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                                    <circle cx="12" cy="7" r="4">
-                                                                    </circle>
-                                                                </svg>
-                                                            </div>
-                                                            <div class="delivery-detail">
-                                                                <h6>Hello,</h6>
-                                                                <h5><?php echo $result['name'] ?></h5>
-                                                            </div>
-                                                        </div>
+                                    <li class="right-side onhover-dropdown">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-user">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="12" cy="7" r="4">
+                                                    </circle>
+                                                </svg>
+                                            </div>
+                                            <div class="delivery-detail">
+                                                <h6>Hello,</h6>
+                                                <h5><?php echo $result['name'] ?></h5>
+                                            </div>
+                                        </div>
 
-                                                        <div class="onhover-div onhover-div-login">
-                                                            <ul class="user-box-name">
+                                        <div class="onhover-div onhover-div-login">
+                                            <ul class="user-box-name">
 
-                                                                <li class="product-box-contain">
-                                                                    <a href="./user.php">My Account</a>
-                                                                </li>
-                                                                <li class="product-box-contain">
-                                                                    <i></i>
-                                                                    <a href="?action=logout">Log Out</a>
-                                                                </li>
+                                                <li class="product-box-contain">
+                                                    <a href="./user.php">My Account</a>
+                                                </li>
+                                                <li class="product-box-contain">
+                                                    <i></i>
+                                                    <a href="?action=logout">Log Out</a>
+                                                </li>
 
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                <?php
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <?php
                                                     $i++;
                                                 }
                                             } else {
                                                 ?>
-                                            <?php
+                                    <?php
                                             }
                                         } else {
                                             ?>
-                                        <?php
+                                    <?php
                                         }
                                         ?>
                                     <?php
                                     } else {
                                     ?>
-                                        <li class="right-side onhover-dropdown">
-                                            <div class="delivery-login-box">
-                                                <div class="delivery-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                        <circle cx="12" cy="7" r="4">
-                                                        </circle>
-                                                    </svg>
-                                                </div>
-                                                <div class="delivery-detail">
-
-                                                </div>
+                                    <li class="right-side onhover-dropdown">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-user">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="12" cy="7" r="4">
+                                                    </circle>
+                                                </svg>
                                             </div>
+                                            <div class="delivery-detail">
 
-                                            <div class="onhover-div onhover-div-login">
-                                                <ul class="user-box-name">
-                                                    <li class="product-box-contain">
-                                                        <i></i>
-                                                        <a href="./login.php">Log In</a>
-                                                    </li>
-
-                                                    <li class="product-box-contain">
-                                                        <a href="../client/register.php">Register</a>
-                                                    </li>
-
-                                                    <li class="product-box-contain">
-                                                        <a href="forgot.php">Forgot Password</a>
-                                                    </li>
-                                                </ul>
                                             </div>
-                                        </li>
+                                        </div>
+
+                                        <div class="onhover-div onhover-div-login">
+                                            <ul class="user-box-name">
+                                                <li class="product-box-contain">
+                                                    <i></i>
+                                                    <a href="./login.php">Log In</a>
+                                                </li>
+
+                                                <li class="product-box-contain">
+                                                    <a href="../client/register.php">Register</a>
+                                                </li>
+
+                                                <li class="product-box-contain">
+                                                    <a href="forgot.php">Forgot Password</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <?php
                                     }
                                     ?>
@@ -480,7 +537,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                     <div class="header-nav">
                         <div class="header-nav-left">
                             <button class="dropdown-category">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-left">
                                     <line x1="17" y1="10" x2="3" y2="10"></line>
                                     <line x1="21" y1="6" x2="3" y2="6"></line>
                                     <line x1="21" y1="14" x2="3" y2="14"></line>
@@ -894,23 +953,27 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                 <div class="offcanvas offcanvas-collapse order-xl-2" id="primaryMenu">
                                     <div class="offcanvas-header navbar-shadow">
                                         <h5>Menu</h5>
-                                        <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
                                         <ul class="navbar-nav">
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Home</a>
+                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                                    data-bs-toggle="dropdown">Home</a>
 
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <a class="dropdown-item" href="http://localhost:1002">Kartshop</a>
+                                                        <a class="dropdown-item"
+                                                            href="http://localhost:1002">Kartshop</a>
                                                     </li>
 
                                                 </ul>
                                             </li>
 
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Shop</a>
+                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                                    data-bs-toggle="dropdown">Shop</a>
 
                                                 <ul class="dropdown-menu">
                                                     <li>
@@ -918,7 +981,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                             Products</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="http://localhost:1002/seller-list">Shop
+                                                        <a class="dropdown-item"
+                                                            href="http://localhost:1002/seller-list">Shop
                                                             Seller</a>
                                                     </li>
 
@@ -927,29 +991,36 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
 
                                             <li class="nav-item dropdown dropdown-mega">
-                                                <a class="nav-link dropdown-toggle ps-xl-2 ps-0" href="javascript:void(0)" data-bs-toggle="dropdown">Mega Menu</a>
+                                                <a class="nav-link dropdown-toggle ps-xl-2 ps-0"
+                                                    href="javascript:void(0)" data-bs-toggle="dropdown">Mega Menu</a>
 
-                                                <div class="dropdown-menu dropdown-menu-2" style="background-image: url(../assets_client/images/bg.png);">
+                                                <div class="dropdown-menu dropdown-menu-2"
+                                                    style="background-image: url(../assets_client/images/bg.png);">
                                                     <div class="row">
                                                         <div class="dropdown-column col-xl-3">
                                                             <h5 class="dropdown-header">Daily Vegetables</h5>
                                                             <a class="dropdown-item" href="shop-left-sidebar.html">Beans
                                                                 &amp; Brinjals</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Broccoli &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Broccoli &amp;
                                                                 Cauliflower</a>
 
-                                                            <a href="shop-left-sidebar.html" class="dropdown-item">Chilies, Garlic</a>
+                                                            <a href="shop-left-sidebar.html"
+                                                                class="dropdown-item">Chilies, Garlic</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Vegetables &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Vegetables &amp;
                                                                 Salads</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Gourd, Cucumber</a>
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Gourd, Cucumber</a>
 
                                                             <a class="dropdown-item" href="shop-left-sidebar.html">Herbs
                                                                 &amp; Sprouts</a>
 
-                                                            <a href="demo-personal-portfolio.html" class="dropdown-item">Lettuce &amp; Leafy</a>
+                                                            <a href="demo-personal-portfolio.html"
+                                                                class="dropdown-item">Lettuce &amp; Leafy</a>
                                                         </div>
 
                                                         <div class="dropdown-column col-xl-3">
@@ -957,17 +1028,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                             <a class="dropdown-item" href="shop-left-sidebar.html">Beans
                                                                 &amp; Brinjals</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Broccoli &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Broccoli &amp;
                                                                 Cauliflower</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Chilies, Garlic</a>
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Chilies, Garlic</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Vegetables &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Vegetables &amp;
                                                                 Salads</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Gourd, Cucumber</a>
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Gourd, Cucumber</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Potatoes &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Potatoes &amp;
                                                                 Tomatoes</a>
 
                                                             <a href="shop-left-sidebar.html" class="dropdown-item">Peas
@@ -976,19 +1052,24 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                                                         <div class="dropdown-column col-xl-3">
                                                             <h5 class="dropdown-header">Exotic Vegetables</h5>
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Asparagus &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Asparagus &amp;
                                                                 Artichokes</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Avocados &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Avocados &amp;
                                                                 Peppers</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Broccoli &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Broccoli &amp;
                                                                 Zucchini</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Celery, Fennel &amp;
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Celery, Fennel &amp;
                                                                 Leeks</a>
 
-                                                            <a class="dropdown-item" href="shop-left-sidebar.html">Chilies &amp; Lime</a>
+                                                            <a class="dropdown-item"
+                                                                href="shop-left-sidebar.html">Chilies &amp; Lime</a>
                                                         </div>
 
                                                         <div class="dropdown-column dropdown-column-img col-3"></div>
@@ -998,7 +1079,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
 
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Blog</a>
+                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                                    data-bs-toggle="dropdown">Blog</a>
                                                 <ul class="dropdown-menu">
 
 
@@ -1011,7 +1093,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
 
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Seller</a>
+                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                                    data-bs-toggle="dropdown">Seller</a>
                                                 <ul class="dropdown-menu">
                                                     <li>
                                                         <a class="dropdown-item" href="seller-become.php">Become a
@@ -1019,7 +1102,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                                     </li>
 
                                                     <li>
-                                                        <a class="dropdown-item" href="http://localhost:1002/seller-list">Seller
+                                                        <a class="dropdown-item"
+                                                            href="http://localhost:1002/seller-list">Seller
                                                             Shops</a>
                                                     </li>
 
@@ -1033,7 +1117,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                         <div class="header-nav-right">
                             <button class="btn deal-button" data-bs-toggle="modal" data-bs-target="#deal-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-zap">
                                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                                 </svg>
                                 <span>Deal Today</span>

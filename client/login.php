@@ -6,6 +6,9 @@ include_once __DIR__ . '/../inc/_header.inc.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $userclass->loginuser($_POST);
 }
+if (isset($_SESSION['userid'])) {
+    echo "<script>window.location.href = './home.php';</script>";
+}
 if (isset($login)) {
 
     echo 'user id =>  ';
@@ -63,16 +66,14 @@ if (isset($login)) {
                         <form class="row g-4" action="" method="post">
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating log-in-form">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email Address">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
                                     <label for="email">Email Address</label>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating log-in-form">
-                                    <input type="password" name="pass" class="form-control" id="password"
-                                        placeholder="Password">
+                                    <input type="password" name="pass" class="form-control" id="password" placeholder="Password">
                                     <label for="password">Password</label>
                                 </div>
                             </div>
@@ -80,8 +81,7 @@ if (isset($login)) {
                             <div class="col-12">
                                 <div class="forgot-box">
                                     <div class="form-check ps-0 m-0 remember-box">
-                                        <input class="checkbox_animated check-box" type="checkbox"
-                                            id="flexCheckDefault">
+                                        <input class="checkbox_animated check-box" type="checkbox" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                                     </div>
                                     <a href="forgot.html" class="forgot-password">Forgot Password?</a>
@@ -103,15 +103,13 @@ if (isset($login)) {
                         <ul>
                             <li>
                                 <a href="https://www.google.com/" class="btn google-button w-100">
-                                    <img src="../public/assets_client/images/inner-page/google.png"
-                                        class="blur-up lazyloaded" alt="">
+                                    <img src="../public/assets_client/images/inner-page/google.png" class="blur-up lazyloaded" alt="">
                                     Log In with Google
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.facebook.com/" class="btn google-button w-100">
-                                    <img src="../public/assets_client/images/inner-page/facebook.png"
-                                        class="blur-up lazyloaded" alt=""> Log In with Facebook
+                                    <img src="../public/assets_client/images/inner-page/facebook.png" class="blur-up lazyloaded" alt=""> Log In with Facebook
                                 </a>
                             </li>
                         </ul>

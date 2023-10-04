@@ -140,4 +140,37 @@ class invoice
         }
         // vui lòng tham khảo thêm tại code demo
     }
+    public function get_invoice($user, $invoiid)
+    {
+
+        $querys = "SELECT * FROM `order` WHERE id = $invoiid AND payment = 1 AND user = $user ORDER BY id DESC";
+        $results = $this->db->select($querys);
+
+        if ($results && $results->num_rows > 0) {
+            $a = $results->fetch_assoc();
+            $check = $a['id'];
+
+            $query = "SELECT cart.*, product.name, product.image, product.price,users.email, category.name AS category_name, (cart.quantity * product.price) AS total_price
+            FROM cart
+            JOIN product ON cart.product = product.id
+            JOIN category ON product.category = category.id
+            JOIN users ON cart.user = users.id
+            WHERE cart.status = $check
+            ORDER BY cart.id DESC";
+            $result = $this->db->select($query);
+            return $result;
+        } else {
+            echo "<script>window.location.href = './login.php';</script>";
+        }
+    }
+    public function get_order_user_bill($id, $user)
+    {
+        $query = "SELECT `order`.*, users.*
+        FROM `order`
+        JOIN users ON users.id = `order`.user
+        WHERE `order`.id = $id AND `order`.payment = 1 AND `order`.user = $user";
+        $result = $this->db->update($query);
+
+        return $result;
+    }
 }

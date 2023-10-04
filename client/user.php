@@ -1,6 +1,10 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.inc.php';
+if (!isset($_SESSION['userid'])) {
+    echo "<script>window.location.href = './login.php';</script>";
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
     if ($_GET['vnp_ResponseCode'] == '00') {
         # code...
@@ -666,7 +670,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                             <?php
                                                             } else {
                                                             ?>
-                                                                <a href="http://localhost:1000/invoice/6858238726628591">
+                                                                <a href="./invoice.php?bill=<?php echo $result['id'] ?>">
                                                                     <h4>#6858238726628591 <span class="success-bg">Đã thanh
                                                                             toán</span>
                                                                     </h4>
