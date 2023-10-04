@@ -41,14 +41,12 @@
                         <ul>
                             <li>
                                 <a href="https://play.google.com/store/apps" target="_blank">
-                                    <img src="../public/assets_client/images/playstore.svg" class="blur-up lazyload"
-                                        alt="">
+                                    <img src="../public/assets_client/images/playstore.svg" class="blur-up lazyload" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.apple.com/in/app-store/" target="_blank">
-                                    <img src="../public/assets_client/images/appstore.svg" class="blur-up lazyload"
-                                        alt="">
+                                    <img src="../public/assets_client/images/appstore.svg" class="blur-up lazyload" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -213,8 +211,7 @@
 <!-- Footer End -->
 
 <!-- Quick View Modal Box Start -->
-<div class="modal fade theme-modal view-modal" id="view" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade theme-modal view-modal" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header p-0">
@@ -226,8 +223,7 @@
                 <div class="row g-sm-4 g-2">
                     <div class="col-lg-6">
                         <div class="slider-image">
-                            <img src="../public/assets_client/images/product/category/1.jpg"
-                                class="img-fluid blur-up lazyload" alt="">
+                            <img src="../public/assets_client/images/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
                         </div>
                     </div>
 
@@ -301,11 +297,9 @@
                             </div>
 
                             <div class="modal-button">
-                                <button onclick="location.href = 'cart.html';"
-                                    class="btn btn-md add-cart-button icon">Add
+                                <button onclick="location.href = 'cart.html';" class="btn btn-md add-cart-button icon">Add
                                     To Cart</button>
-                                <button onclick="location.href = 'product-left.html';"
-                                    class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
+                                <button onclick="location.href = 'product-left.html';" class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
                                     View More Details</button>
                             </div>
                         </div>
@@ -318,8 +312,7 @@
 <!-- Quick View Modal Box End -->
 
 <!-- Location Modal Start -->
-<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header">
@@ -419,8 +412,7 @@
 <!-- Location Modal End -->
 
 <!-- Deal Box Modal Start -->
-<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header">
@@ -438,8 +430,7 @@
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/10.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/10.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -452,8 +443,7 @@
                         <li class="list-2">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/11.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/11.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -466,8 +456,7 @@
                         <li class="list-3">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/12.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/12.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -480,8 +469,7 @@
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/13.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/13.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -530,58 +518,7 @@
 <!-- Items section End -->
 
 <!-- Tap to top start -->
-<div class="theme-option">
-    <div class="setting-box">
-        <button class="btn setting-button">
-            <i class="fa-solid fa-gear"></i>
-        </button>
 
-        <div class="theme-setting-2">
-            <div class="theme-box">
-                <ul>
-                    <li>
-                        <div class="setting-name">
-                            <h4>Color</h4>
-                        </div>
-                        <div class="theme-setting-button color-picker">
-                            <form class="form-control">
-                                <label for="colorPick" class="form-label mb-0">Theme Color</label>
-                                <input type="color" class="form-control form-control-color" id="colorPick"
-                                    value="#0da487" title="Choose your color">
-                            </form>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="setting-name">
-                            <h4>Dark</h4>
-                        </div>
-                        <div class="theme-setting-button">
-                            <button class="btn btn-2 outline" id="darkButton">Dark</button>
-                            <button class="btn btn-2 unline" id="lightButton">Light</button>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="setting-name">
-                            <h4>RTL</h4>
-                        </div>
-                        <div class="theme-setting-button rtl">
-                            <button class="btn btn-2 rtl-unline">LTR</button>
-                            <button class="btn btn-2 rtl-outline">RTL</button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="back-to-top">
-        <a id="back-to-top" href="#">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-    </div>
-</div>
 <!-- Tap to top end -->
 
 <!-- Bg overlay Start -->

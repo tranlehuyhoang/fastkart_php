@@ -4,18 +4,26 @@ session_start();
 include_once __DIR__ .  '/../controller/category.class.php';
 include_once __DIR__ .  '/../controller/product.class.php';
 include_once __DIR__ .  '/../controller/review.class.php';
+include_once __DIR__ .  '/../controller/user.class.php';
+include_once __DIR__ .  '/../controller/cart.class.php';
+include_once __DIR__ .  '/../controller/checkout.class.php';
 
 // $user = new user();
 $categoryclass = new category();
+$userclass = new user();
 
 $productclass = new product();
 $reviewclass = new review();
+$cartclass = new cart();
+$checkoutclass = new checkout();
 
 $category = $categoryclass->show_category();
 $categorys = $categoryclass->show_category();
 $product = $productclass->show_product();
 
-
+if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+    $userclass->logout();
+}
 
 
 ?>
@@ -85,21 +93,21 @@ $product = $productclass->show_product();
                     <div class="col-xxl-6 col-lg-9 d-lg-block d-none">
                         <div class="header-offer">
                             <div class="notification-slider slick-initialized slick-slider slick-vertical">
-                                <div class="slick-list draggable" style="height: 18.4201px;">
+                                <div class="slick-list draggable" style="height: 18.3281px;">
                                     <div class="slick-track"
-                                        style="opacity: 1; height: 93px; transform: translate3d(0px, -36px, 0px);">
+                                        style="opacity: 1; height: 92px; transform: translate3d(0px, -36px, 0px); transition: transform 500ms ease 0s;">
                                         <div class="slick-slide slick-cloned" data-slick-index="-1" id=""
-                                            aria-hidden="true" style="width: 724px;" tabindex="-1">
+                                            aria-hidden="true" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6>Something you love is now on sale!
-                                                    <a href="shop-left-sidebar.html" class="text-white"
-                                                        tabindex="-1">Buy Now
+                                                    <a href="shop-left-sidebar.php" class="text-white" tabindex="-1">Buy
+                                                        Now
                                                         !</a>
                                                 </h6>
                                             </div>
                                         </div>
                                         <div class="slick-slide" data-slick-index="0" aria-hidden="true"
-                                            style="width: 724px;" tabindex="-1">
+                                            style="width: 818px;" tabindex="0">
                                             <div class="timer-notification">
                                                 <h6><strong class="me-1">Welcome to Fastkart!</strong>Wrap new
                                                     offers/gift
@@ -111,21 +119,22 @@ $product = $productclass->show_product();
                                             </div>
                                         </div>
                                         <div class="slick-slide slick-current slick-active" data-slick-index="1"
-                                            aria-hidden="false" style="width: 724px;" tabindex="0">
+                                            aria-hidden="false" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6>Something you love is now on sale!
-                                                    <a href="shop-left-sidebar.html" class="text-white" tabindex="0">Buy
+                                                    <a href="shop-left-sidebar.php" class="text-white" tabindex="-1">Buy
                                                         Now
                                                         !</a>
                                                 </h6>
                                             </div>
                                         </div>
                                         <div class="slick-slide slick-cloned" data-slick-index="2" id=""
-                                            aria-hidden="true" style="width: 724px;" tabindex="-1">
+                                            aria-hidden="true" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6><strong class="me-1">Welcome to Fastkart!</strong>Wrap new
                                                     offers/gift
-                                                    every signle day on Weekends.<strong class="ms-1">New Coupon Code:
+                                                    every signle day on Weekends.<strong class="ms-1">New Coupon
+                                                        Code:
                                                         Fast024
                                                     </strong>
 
@@ -133,11 +142,11 @@ $product = $productclass->show_product();
                                             </div>
                                         </div>
                                         <div class="slick-slide slick-cloned" data-slick-index="3" id=""
-                                            aria-hidden="true" style="width: 724px;" tabindex="-1">
+                                            aria-hidden="true" style="width: 818px;" tabindex="-1">
                                             <div class="timer-notification">
                                                 <h6>Something you love is now on sale!
-                                                    <a href="shop-left-sidebar.html" class="text-white"
-                                                        tabindex="-1">Buy Now
+                                                    <a href="shop-left-sidebar.php" class="text-white" tabindex="-1">Buy
+                                                        Now
                                                         !</a>
                                                 </h6>
                                             </div>
@@ -156,28 +165,28 @@ $product = $productclass->show_product();
                                 <div class="dropdown theme-form-select">
                                     <button class="btn dropdown-toggle" type="button" id="select-language"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="../public/assets_client/images/country/united-states.png"
+                                        <img src=" http://localhost:1002/assets_client/images/country/united-states.png"
                                             class="img-fluid blur-up lazyloaded" alt="">
                                         <span>English</span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="select-language">
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)" id="english">
-                                                <img src="../public/assets_client/images/country/united-kingdom.png"
+                                                <img src=" http://localhost:1002/assets_client/images/country/united-kingdom.png"
                                                     class="img-fluid blur-up lazyload" alt="">
                                                 <span>English</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)" id="france">
-                                                <img src="../public/assets_client/images/country/germany.png"
+                                                <img src=" http://localhost:1002/assets_client/images/country/germany.png"
                                                     class="img-fluid blur-up lazyload" alt="">
                                                 <span>Germany</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)" id="chinese">
-                                                <img src="../public/assets_client/images/country/turkish.png"
+                                                <img src=" http://localhost:1002/assets_client/images/country/turkish.png"
                                                     class="img-fluid blur-up lazyload" alt="">
                                                 <span>Turki</span>
                                             </a>
@@ -222,8 +231,8 @@ $product = $productclass->show_product();
                                     <i class="fa-solid fa-bars"></i>
                                 </span>
                             </button>
-                            <a href="index.html" class="web-logo nav-logo">
-                                <img src="../public/assets_client/images/logo/1.png"
+                            <a href="http://localhost:1002" class="web-logo nav-logo">
+                                <img src=" http://localhost:1002/assets_client/images/logo/1.png"
                                     class="img-fluid blur-up lazyloaded" alt="">
                             </a>
 
@@ -255,7 +264,8 @@ $product = $productclass->show_product();
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-search">
                                                 <circle cx="11" cy="11" r="8"></circle>
-                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65">
+                                                </line>
                                             </svg>
                                         </button>
                                     </div>
@@ -271,7 +281,8 @@ $product = $productclass->show_product();
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-search font-light">
                                                 <circle cx="11" cy="11" r="8"></circle>
-                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65">
+                                                </line>
                                             </svg>
                                         </span>
                                         <input type="text" class="form-control search-type" placeholder="Search here..">
@@ -280,8 +291,10 @@ $product = $productclass->show_product();
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-x font-light">
-                                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                <line x1="18" y1="6" x2="6" y2="18">
+                                                </line>
+                                                <line x1="6" y1="6" x2="18" y2="18">
+                                                </line>
                                             </svg>
                                         </span>
                                     </div>
@@ -295,7 +308,8 @@ $product = $productclass->show_product();
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                         class="feather feather-search">
-                                                        <circle cx="11" cy="11" r="8"></circle>
+                                                        <circle cx="11" cy="11" r="8">
+                                                        </circle>
                                                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                                     </svg>
                                                 </div>
@@ -303,7 +317,7 @@ $product = $productclass->show_product();
                                         </div>
                                     </li>
                                     <li class="right-side">
-                                        <a href="contact-us.html" class="delivery-login-box">
+                                        <a href="contact-us.php" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -321,7 +335,8 @@ $product = $productclass->show_product();
                                         </a>
                                     </li>
                                     <li class="right-side">
-                                        <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">
+                                        <a href="http://localhost:1002/wishlist"
+                                            class="btn p-0 position-relative header-wishlist">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -354,13 +369,13 @@ $product = $productclass->show_product();
                                                 <ul class="cart-list">
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
-                                                            <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="../public/assets_client/images/vegetable/product/1.png"
+                                                            <a href="product-left-thumbnail.php" class="drop-image">
+                                                                <img src=" http://localhost:1002/assets_client/images/vegetable/product/1.png"
                                                                     class="blur-up lazyloaded" alt="">
                                                             </a>
 
                                                             <div class="drop-contain">
-                                                                <a href="product-left-thumbnail.html">
+                                                                <a href="product-left-thumbnail.php">
                                                                     <h5>Fantasy Crunchy Choco Chip Cookies</h5>
                                                                 </a>
                                                                 <h6><span>1 x</span> $80.58</h6>
@@ -373,13 +388,13 @@ $product = $productclass->show_product();
 
                                                     <li class="product-box-contain">
                                                         <div class="drop-cart">
-                                                            <a href="product-left-thumbnail.html" class="drop-image">
-                                                                <img src="../public/assets_client/images/vegetable/product/2.png"
+                                                            <a href="product-left-thumbnail.php" class="drop-image">
+                                                                <img src=" http://localhost:1002/assets_client/images/vegetable/product/2.png"
                                                                     class="blur-up lazyloaded" alt="">
                                                             </a>
 
                                                             <div class="drop-contain">
-                                                                <a href="product-left-thumbnail.html">
+                                                                <a href="product-left-thumbnail.php">
                                                                     <h5>Peanut Butter Bite Premium Butter Cookies 600 g
                                                                     </h5>
                                                                 </a>
@@ -398,13 +413,28 @@ $product = $productclass->show_product();
                                                 </div>
 
                                                 <div class="button-group">
-                                                    <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>
-                                                    <a href="checkout.html" class="btn btn-sm cart-button theme-bg-color
+                                                    <a href="http://localhost:1002/cart"
+                                                        class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="checkout.php" class="btn btn-sm cart-button theme-bg-color
                                                     text-white">Checkout</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
+                                    <?php
+                                    if (isset($_SESSION['userid'])) {
+                                        $userdeetail = $userclass->getuserbyid($_SESSION['userid']);
+
+
+
+                                    ?>
+                                    <?php
+                                        if (isset($userdeetail)) {
+                                            if ($userdeetail && $userdeetail->num_rows > 0) {
+                                                $i = 0;
+                                                while ($result = $userdeetail->fetch_assoc()) {
+                                                    # code...
+                                        ?>
                                     <li class="right-side onhover-dropdown">
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
@@ -413,12 +443,59 @@ $product = $productclass->show_product();
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                     class="feather feather-user">
                                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="12" cy="7" r="4"></circle>
+                                                    <circle cx="12" cy="7" r="4">
+                                                    </circle>
                                                 </svg>
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>Hello,</h6>
-                                                <h5>My Account</h5>
+                                                <h5><?php echo $result['name'] ?></h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="onhover-div onhover-div-login">
+                                            <ul class="user-box-name">
+
+                                                <li class="product-box-contain">
+                                                    <a href="http://localhost:1002/user">My Account</a>
+                                                </li>
+                                                <li class="product-box-contain">
+                                                    <i></i>
+                                                    <a href="?action=logout">Log Out</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                ?>
+                                    <?php
+                                            }
+                                        } else {
+                                            ?>
+                                    <?php
+                                        }
+                                        ?>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <li class="right-side onhover-dropdown">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-user">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="12" cy="7" r="4">
+                                                    </circle>
+                                                </svg>
+                                            </div>
+                                            <div class="delivery-detail">
+
                                             </div>
                                         </div>
 
@@ -426,19 +503,24 @@ $product = $productclass->show_product();
                                             <ul class="user-box-name">
                                                 <li class="product-box-contain">
                                                     <i></i>
-                                                    <a href="login.html">Log In</a>
+                                                    <a href="./login.php">Log In</a>
                                                 </li>
 
                                                 <li class="product-box-contain">
-                                                    <a href="sign-up.html">Register</a>
+                                                    <a href="../client/register.php">Register</a>
                                                 </li>
 
                                                 <li class="product-box-contain">
-                                                    <a href="forgot.html">Forgot Password</a>
+                                                    <a href="forgot.php">Forgot Password</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
+                                    <?php
+                                    }
+                                    ?>
+
+
                                 </ul>
                             </div>
                         </div>
@@ -475,7 +557,7 @@ $product = $productclass->show_product();
                                 <ul class="category-list">
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/vegetable.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/vegetable.svg" alt="">
                                             <h6>Vegetables &amp; Fruit</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -543,7 +625,7 @@ $product = $productclass->show_product();
 
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/cup.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/cup.svg" alt="">
                                             <h6>Beverages</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -582,7 +664,7 @@ $product = $productclass->show_product();
 
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/meats.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/meats.svg" alt="">
                                             <h6>Meats &amp; Seafood</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -641,7 +723,7 @@ $product = $productclass->show_product();
 
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/breakfast.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/breakfast.svg" alt="">
                                             <h6>Breakfast &amp; Dairy</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -715,7 +797,7 @@ $product = $productclass->show_product();
 
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/frozen.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/frozen.svg" alt="">
                                             <h6>Frozen Foods</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -748,7 +830,7 @@ $product = $productclass->show_product();
 
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/biscuit.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/biscuit.svg" alt="">
                                             <h6>Biscuits &amp; Snacks</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -801,7 +883,7 @@ $product = $productclass->show_product();
 
                                     <li class="onhover-category-list">
                                         <a href="javascript:void(0)" class="category-name">
-                                            <img src="../public/assets_client/svg/1/grocery.svg" alt="">
+                                            <img src=" http://localhost:1002/assets_client/svg/1/grocery.svg" alt="">
                                             <h6>Grocery &amp; Staples</h6>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </a>
@@ -880,32 +962,10 @@ $product = $productclass->show_product();
 
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <a class="dropdown-item" href="index.html">Kartshop</a>
+                                                        <a class="dropdown-item"
+                                                            href="http://localhost:1002">Kartshop</a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-2.html">Sweetshop</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-3.html">Organic</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-4.html">Supershop</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-5.html">Classic shop</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-6.html">Furniture</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-7.html">Search Oriented</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-8.html">Category Focus</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="index-9.html">Fashion</a>
-                                                    </li>
+
                                                 </ul>
                                             </li>
 
@@ -915,82 +975,25 @@ $product = $productclass->show_product();
 
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <a class="dropdown-item" href="shop-category-slider.html">Shop
-                                                            Category Slider</a>
+                                                        <a class="dropdown-item" href="shop-left-sidebar.php">Shop
+                                                            Products</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="shop-category.html">Shop
-                                                            Category Sidebar</a>
+                                                        <a class="dropdown-item"
+                                                            href="http://localhost:1002/seller-list">Shop
+                                                            Seller</a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="shop-banner.html">Shop Banner</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="shop-left-sidebar.html">Shop Left
-                                                            Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="shop-list.html">Shop List</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="shop-right-sidebar.html">Shop
-                                                            Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="shop-top-filter.html">Shop Top
-                                                            Filter</a>
-                                                    </li>
+
                                                 </ul>
                                             </li>
 
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                    data-bs-toggle="dropdown">Product</a>
-
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a class="dropdown-item" href="product-4-image.html">Product
-                                                            4 Image</a>
-                                                    </li>
-                                                    <li class="sub-dropdown-hover">
-                                                        <a href="javascript:void(0)" class="dropdown-item">Product
-                                                            Thumbnail</a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                <a href="product-left-thumbnail.html">Left Thumbnail</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="product-right-thumbnail.html">Right
-                                                                    Thumbnail</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="product-bottom-thumbnail.html">Bottom
-                                                                    Thumbnail</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-bundle.html" class="dropdown-item">Product
-                                                            Bundle</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-slider.html" class="dropdown-item">Product
-                                                            Slider</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-sticky.html" class="dropdown-item">Product
-                                                            Sticky</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
 
                                             <li class="nav-item dropdown dropdown-mega">
                                                 <a class="nav-link dropdown-toggle ps-xl-2 ps-0"
                                                     href="javascript:void(0)" data-bs-toggle="dropdown">Mega Menu</a>
 
-                                                <div class="dropdown-menu dropdown-menu-2">
+                                                <div class="dropdown-menu dropdown-menu-2"
+                                                    style="background-image: url(../assets_client/images/bg.png);">
                                                     <div class="row">
                                                         <div class="dropdown-column col-xl-3">
                                                             <h5 class="dropdown-header">Daily Vegetables</h5>
@@ -1052,7 +1055,8 @@ $product = $productclass->show_product();
                                                                 Artichokes</a>
 
                                                             <a class="dropdown-item"
-                                                                href="shop-left-sidebar.html">Avocados &amp; Peppers</a>
+                                                                href="shop-left-sidebar.html">Avocados &amp;
+                                                                Peppers</a>
 
                                                             <a class="dropdown-item"
                                                                 href="shop-left-sidebar.html">Broccoli &amp;
@@ -1071,147 +1075,36 @@ $product = $productclass->show_product();
                                                 </div>
                                             </li>
 
+
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                                     data-bs-toggle="dropdown">Blog</a>
                                                 <ul class="dropdown-menu">
+
+
                                                     <li>
-                                                        <a class="dropdown-item" href="blog-detail.html">Blog Detail</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="blog-grid.html">Blog Grid</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="blog-list.html">Blog List</a>
+                                                        <a class="dropdown-item" href="blog-detail.php">Blog List</a>
                                                     </li>
                                                 </ul>
                                             </li>
 
-                                            <li class="nav-item dropdown new-nav-item">
-                                                <label class="new-dropdown">New</label>
-                                                <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                    data-bs-toggle="dropdown">Pages</a>
-                                                <ul class="dropdown-menu">
-                                                    <li class="sub-dropdown-hover">
-                                                        <a class="dropdown-item" href="javascript:void(0)">Email
-                                                            Template <span class="new-text"><i
-                                                                    class="fa-solid fa-bolt-lightning"></i></span></a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                <a
-                                                                    href="../email-templete/abandonment-email.html">Abandonment</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="../email-templete/offer-template.html">Offer
-                                                                    Template</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="../email-templete/order-success.html">Order
-                                                                    Success</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="../email-templete/reset-password.html">Reset
-                                                                    Password</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="../email-templete/welcome.html">Welcome
-                                                                    template</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="sub-dropdown-hover">
-                                                        <a class="dropdown-item" href="javascript:void(0)">Invoice
-                                                            Template <span class="new-text"><i
-                                                                    class="fa-solid fa-bolt-lightning"></i></span></a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                <a href="../invoice/invoice-1.html">Invoice 1</a>
-                                                            </li>
 
-                                                            <li>
-                                                                <a href="../invoice/invoice-2.html">Invoice 2</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="../invoice/invoice-3.html">Invoice 3</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="404.html">404</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="about-us.html">About Us</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="cart.html">Cart</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="contact-us.html">Contact</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="checkout.html">Checkout</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="coming-soon.html">Coming Soon</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="compare.html">Compare</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="faq.html">Faq</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="order-success.html">Order
-                                                            Success</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="order-tracking.html">Order
-                                                            Tracking</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="otp.html">OTP</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="search.html">Search</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="user-dashboard.html">User
-                                                            Dashboard</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="wishlist.html">Wishlist</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
 
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                                     data-bs-toggle="dropdown">Seller</a>
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <a class="dropdown-item" href="seller-become.html">Become a
+                                                        <a class="dropdown-item" href="seller-become.php">Become a
                                                             Seller</a>
                                                     </li>
+
                                                     <li>
-                                                        <a class="dropdown-item" href="seller-dashboard.html">Seller
-                                                            Dashboard</a>
+                                                        <a class="dropdown-item"
+                                                            href="http://localhost:1002/seller-list">Seller
+                                                            Shops</a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="seller-detail.html">Seller
-                                                            Detail</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="seller-detail-2.html">Seller
-                                                            Detail 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="seller-grid.html">Seller Grid</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="seller-grid-2.html">Seller Grid
-                                                            2</a>
-                                                    </li>
+
                                                 </ul>
                                             </li>
                                         </ul>

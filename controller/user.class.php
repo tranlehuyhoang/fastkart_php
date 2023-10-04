@@ -105,7 +105,7 @@ class user
     {
 
 
-        $query = "SELECT * FROM clone_user WHERE user_id = '$id'";
+        $query = "SELECT * FROM users WHERE id = '$id'";
         $result = $this->db->select($query);
 
         return $result;
@@ -152,28 +152,32 @@ class user
     }
     public function logout()
     {
-        unset($_SESSION['clone_user_id']);
+        unset($_SESSION['userid']);
     }
     public function loginuser($data)
     {
-        $userpass = mysqli_real_escape_string($this->db->link, md5($data['userpass']));
-        $useremail = mysqli_real_escape_string($this->db->link, $data['useremail']);
-        $query = "SELECT * FROM user_user WHERE  userpass = '$userpass'AND useremail = '$useremail' ";
+        $userpass = mysqli_real_escape_string($this->db->link, $data['pass']);
+        $useremail = mysqli_real_escape_string($this->db->link, $data['email']);
+        $query = "SELECT * FROM users WHERE email = '$useremail'";
         $result = $this->db->select($query);
 
-        if ($result) {
-            if ($result && $result->num_rows > 0) {
-                while ($resultss = $result->fetch_assoc()) {
-                    $_SESSION['userid'] = $resultss['userid'];
-                }
-            }
-            $arlet = "<div class='alert alert-success' role='alert'>Login Successfully</div>";
-            return $arlet;
-        } else {
-            $arlet = "<div class='alert alert-danger' role='alert'>Login Error </div>";
+        if ($result && $result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $hashedPassword = $user['password'];
 
-            return $arlet;
+            if (password_verify($userpass, $hashedPassword)) {
+                $_SESSION['userid'] = $user['id'];
+                $alert = "<div class='alert alert-success' role='alert'>Login Successfully</div>";
+                echo "<script>window.location.href = './home.php';</script>";
+                exit();
+            } else {
+                $alert = "<div class='alert alert-danger' role='alert'>Invalid Password</div>";
+            }
+        } else {
+            $alert = "<div class='alert alert-danger' role='alert'>Invalid Email</div>";
         }
+
+        return $alert;
     }
     public function countusser()
     {
