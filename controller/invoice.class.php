@@ -28,19 +28,38 @@ class invoice
         $result = $this->db->select($query);
         return $result;
     }
+    // public function getbill($id)
+    // {
+    //     $query = "SELECT cart.*, category.name AS category_name, product.price, product.name, product.image, cart.quantity, SUM(product.price * cart.quantity) AS total_price
+    //     FROM cart
+    //     JOIN product ON product.id = cart.product
+    //     JOIN order ON order.id = cart.status
+    //     JOIN category ON category.id = product.category
+
+    //     WHERE cart.status = $id AND `order`.payment = 0
+    //     ORDER BY cart.id DESC;
+    //     ";
+    //     $result = $this->db->select($query);
+    //     return $result;
+    // }
     public function getbill($id)
     {
-        $query = "SELECT cart.*, category.name AS category_name, product.price, product.name, product.image, cart.quantity, SUM(product.price * cart.quantity) AS total_price
-        FROM cart
-        JOIN product ON product.id = cart.product
-        JOIN order ON order.id = cart.status
-        JOIN category ON category.id = product.category
-        
-        WHERE cart.status = $id AND `order`.payment = 0
-        ORDER BY cart.id DESC;
-        ";
-        $result = $this->db->select($query);
-        return $result;
+        $querys = "SELECT * FROM `order` WHERE id = $id AND payment = 0 ORDER BY id DESC";
+        $results = $this->db->select($querys);
+
+        if ($results && $results->num_rows > 0) {
+            $a = $results->fetch_assoc();
+            $check = $a['id'];
+
+            $query = "SELECT cart.*, product.name, product.image, product.price, category.name AS category_name, (cart.quantity * product.price) AS total_price
+            FROM cart
+            JOIN product ON cart.product = product.id
+            JOIN category ON product.category = category.id
+            WHERE cart.status = $check
+            ORDER BY cart.id DESC";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
     public function re_payment($code, $totalprice)
     {
