@@ -4,6 +4,8 @@ include_once __DIR__ . '/../inc/_header.inc.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['quantity'])) {
     print_r($_POST);
     $addtocart = $cartclass->addToCart($_POST, $_SESSION['userid']);
+    $carts = $cartclass->show_cart($_SESSION['userid']);
+    $carts1 = $cartclass->show_cart($_SESSION['userid']);
     if (isset($addtocart)) {
         echo $addtocart;
     }
@@ -67,106 +69,98 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                             // echo '</pre>';
                                             # code...
                                 ?>
-                                <tr class="product-box-contain">
-                                    <td class="product-detail">
-                                        <div class="product border-0">
-                                            <a href="product-left-thumbnail.html" class="product-image">
-                                                <img src="../public/<?php echo $result['image'] ?>"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-detail">
-                                                <ul>
-                                                    <li class="name">
-                                                        <a
-                                                            href="product-left-thumbnail.html"><?php echo $result['product_name'] ?></a>
-                                                    </li>
+                                            <tr class="product-box-contain">
+                                                <td class="product-detail">
+                                                    <div class="product border-0">
+                                                        <a href="product-left-thumbnail.html" class="product-image">
+                                                            <img src="../public/<?php echo $result['image'] ?>" class="img-fluid blur-up lazyload" alt="">
+                                                        </a>
+                                                        <div class="product-detail">
+                                                            <ul>
+                                                                <li class="name">
+                                                                    <a href="product-left-thumbnail.html"><?php echo $result['product_name'] ?></a>
+                                                                </li>
 
-                                                    <li class="text-content"><span class="text-title">Category
-                                                            By:</span> <?php echo $result['category_name'] ?></li>
+                                                                <li class="text-content"><span class="text-title">Category
+                                                                        By:</span> <?php echo $result['category_name'] ?></li>
 
-                                                    <li class="text-content"><span class="text-title">Quantity</span> -
-                                                        500 g</li>
+                                                                <li class="text-content"><span class="text-title">Quantity</span> -
+                                                                    500 g</li>
 
-                                                    <li>
-                                                        <h5 class="text-content d-inline-block">Price :</h5>
-                                                        <span>$35.10</span>
-                                                        <span class="text-content">$45.68</span>
-                                                    </li>
+                                                                <li>
+                                                                    <h5 class="text-content d-inline-block">Price :</h5>
+                                                                    <span>$35.10</span>
+                                                                    <span class="text-content">$45.68</span>
+                                                                </li>
 
-                                                    <li>
-                                                        <h5 class="saving theme-color">Saving : $20.68</h5>
-                                                    </li>
+                                                                <li>
+                                                                    <h5 class="saving theme-color">Saving : $20.68</h5>
+                                                                </li>
 
-                                                    <li class="quantity-price-box">
+                                                                <li class="quantity-price-box">
+                                                                    <div class="cart_qty">
+                                                                        <div class="input-group">
+                                                                            <button type="button" class="btn qty-left-minus" data-type="minus" data-field="">
+                                                                                <i class="fa fa-minus ms-0" aria-hidden="true"></i>
+                                                                            </button>
+                                                                            <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
+                                                                            <button type="button" class="btn qty-right-plus" data-type="plus" data-field="">
+                                                                                <i class="fa fa-plus ms-0" aria-hidden="true"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li>
+                                                                    <h5>Total:
+                                                                        $<?php echo $result['quantity'] * $result['price'] ?>.00
+                                                                    </h5>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td class="price">
+                                                    <h4 class="table-title text-content">Price</h4>
+                                                    <h5>$<?php echo $result['price'] ?>.00</h5>
+                                                    <h6 class="theme-color">You Save : $<?php echo $result['price'] ?>.00</h6>
+                                                </td>
+
+                                                <td class="quantity">
+                                                    <h4 class="table-title text-content">Qty</h4>
+                                                    <div class="quantity-price">
                                                         <div class="cart_qty">
                                                             <div class="input-group">
-                                                                <button type="button" class="btn qty-left-minus"
-                                                                    data-type="minus" data-field="">
+                                                                <button type="button" class="btn qty-left-minus" data-type="minus" data-field="">
                                                                     <i class="fa fa-minus ms-0" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input"
-                                                                    type="text" name="quantity" value="0">
-                                                                <button type="button" class="btn qty-right-plus"
-                                                                    data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input" type="number" name="quantity" value="<?php echo $result['quantity']  ?>">
+                                                                <button type="button" class="btn qty-right-plus" data-type="plus" data-field="">
                                                                     <i class="fa fa-plus ms-0" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
                                                         </div>
-                                                    </li>
+                                                    </div>
+                                                </td>
 
-                                                    <li>
-                                                        <h5>Total:
-                                                            $<?php echo $result['quantity'] * $result['price'] ?>.00
-                                                        </h5>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
+                                                <td class="subtotal">
+                                                    <h4 class="table-title text-content">Total</h4>
+                                                    <h5>$<?php echo $result['quantity'] * $result['price'] ?>.00</h5>
+                                                </td>
 
-                                    <td class="price">
-                                        <h4 class="table-title text-content">Price</h4>
-                                        <h5>$<?php echo $result['price'] ?>.00</h5>
-                                        <h6 class="theme-color">You Save : $<?php echo $result['price'] ?>.00</h6>
-                                    </td>
-
-                                    <td class="quantity">
-                                        <h4 class="table-title text-content">Qty</h4>
-                                        <div class="quantity-price">
-                                            <div class="cart_qty">
-                                                <div class="input-group">
-                                                    <button type="button" class="btn qty-left-minus" data-type="minus"
-                                                        data-field="">
-                                                        <i class="fa fa-minus ms-0" aria-hidden="true"></i>
-                                                    </button>
-                                                    <input class="form-control input-number qty-input" type="number"
-                                                        name="quantity" value="<?php echo $result['quantity']  ?>">
-                                                    <button type="button" class="btn qty-right-plus" data-type="plus"
-                                                        data-field="">
-                                                        <i class="fa fa-plus ms-0" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td class="subtotal">
-                                        <h4 class="table-title text-content">Total</h4>
-                                        <h5>$<?php echo $result['quantity'] * $result['price'] ?>.00</h5>
-                                    </td>
-
-                                    <td class="save-remove">
-                                        <h4 class="table-title text-content">Action</h4>
-                                        <a class="save notifi-wishlist" href="javascript:void(0)">Save for later</a>
-                                        <a class="remove close_button" href="javascript:void(0)">Remove</a>
-                                    </td>
-                                </tr>
-                                <?php
+                                                <td class="save-remove">
+                                                    <h4 class="table-title text-content">Action</h4>
+                                                    <a class="save notifi-wishlist" href="javascript:void(0)">Save for later</a>
+                                                    <a class="remove close_button" href="javascript:void(0)">Remove</a>
+                                                </td>
+                                            </tr>
+                                        <?php
                                             $i++;
                                         }
                                     } else {
                                         ?>
-                                <?php
+                                    <?php
                                     }
                                 } else {
                                     ?>
@@ -186,70 +180,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         $i += $result['total_cost'];
             ?>
 
-            <?php
+                    <?php
                         $i++;
                     }
                     ?>
-            <div class="col-xxl-3">
-                <div class="summery-box p-sticky">
-                    <div class="summery-header">
-                        <h3>Cart Total</h3>
-                    </div>
+                    <div class="col-xxl-3">
+                        <div class="summery-box p-sticky">
+                            <div class="summery-header">
+                                <h3>Cart Total</h3>
+                            </div>
 
-                    <div class="summery-contain">
-                        <div class="coupon-cart">
-                            <h6 class="text-content mb-2">Coupon Apply</h6>
-                            <div class="mb-3 coupon-box input-group">
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="Enter Coupon Code Here...">
-                                <button class="btn-apply">Apply</button>
+                            <div class="summery-contain">
+                                <div class="coupon-cart">
+                                    <h6 class="text-content mb-2">Coupon Apply</h6>
+                                    <div class="mb-3 coupon-box input-group">
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Coupon Code Here...">
+                                        <button class="btn-apply">Apply</button>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <h4>Subtotal</h4>
+                                        <h4 class="price">$<?php echo $i ?>.00</h4>
+                                    </li>
+
+                                    <li>
+                                        <h4>Coupon Discount</h4>
+                                        <h4 class="price">(-) 0.00</h4>
+                                    </li>
+
+                                    <li class="align-items-start">
+                                        <h4>Shipping</h4>
+                                        <h4 class="price text-end">$0.00</h4>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="summery-total">
+                                <li class="list-total border-top-0">
+                                    <h4>Total (USD)</h4>
+                                    <h4 class="price theme-color">$<?php echo $i ?>.00</h4>
+                                </li>
+                            </ul>
+
+                            <div class="button-group cart-button">
+                                <ul>
+                                    <li>
+                                        <button onclick="location.href = './checkout.php';" class="btn btn-animation proceed-btn fw-bold">Process To Checkout</button>
+                                    </li>
+
+                                    <li>
+                                        <button onclick="location.href = 'index.html';" class="btn btn-light shopping-button text-dark">
+                                            <i class="fa-solid fa-arrow-left-long"></i>Return To Shopping</button>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <ul>
-                            <li>
-                                <h4>Subtotal</h4>
-                                <h4 class="price">$<?php echo $i ?>.00</h4>
-                            </li>
-
-                            <li>
-                                <h4>Coupon Discount</h4>
-                                <h4 class="price">(-) 0.00</h4>
-                            </li>
-
-                            <li class="align-items-start">
-                                <h4>Shipping</h4>
-                                <h4 class="price text-end">$0.00</h4>
-                            </li>
-                        </ul>
                     </div>
-
-                    <ul class="summery-total">
-                        <li class="list-total border-top-0">
-                            <h4>Total (USD)</h4>
-                            <h4 class="price theme-color">$<?php echo $i ?>.00</h4>
-                        </li>
-                    </ul>
-
-                    <div class="button-group cart-button">
-                        <ul>
-                            <li>
-                                <button onclick="location.href = './checkout.php';"
-                                    class="btn btn-animation proceed-btn fw-bold">Process To Checkout</button>
-                            </li>
-
-                            <li>
-                                <button onclick="location.href = 'index.html';"
-                                    class="btn btn-light shopping-button text-dark">
-                                    <i class="fa-solid fa-arrow-left-long"></i>Return To Shopping</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <?php
+                <?php
                 } else {
                 ?>
-            <?php
+                <?php
                 }
             } else {
                 ?>
@@ -456,14 +447,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                 <ul>
                                     <li class="mb-0">
                                         <a href="https://play.google.com/store/apps" target="_blank">
-                                            <img src="../public/assets_client/images/playstore.svg"
-                                                class="blur-up lazyload" alt="">
+                                            <img src="../public/assets_client/images/playstore.svg" class="blur-up lazyload" alt="">
                                         </a>
                                     </li>
                                     <li class="mb-0">
                                         <a href="https://www.apple.com/in/app-store/" target="_blank">
-                                            <img src="../public/assets_client/images/appstore.svg"
-                                                class="blur-up lazyload" alt="">
+                                            <img src="../public/assets_client/images/appstore.svg" class="blur-up lazyload" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -514,8 +503,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <!-- Footer Section End -->
 
 <!-- Location Modal Start -->
-<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header">
@@ -615,8 +603,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <!-- Location Modal End -->
 
 <!-- Deal Box Modal Start -->
-<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header">
@@ -634,8 +621,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/10.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/10.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -648,8 +634,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <li class="list-2">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/11.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/11.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -662,8 +647,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <li class="list-3">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/12.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/12.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -676,8 +660,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../public/assets_client/images/vegetable/product/13.png"
-                                        class="blur-up lazyload" alt="">
+                                    <img src="../public/assets_client/images/vegetable/product/13.png" class="blur-up lazyload" alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -711,8 +694,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <div class="theme-setting-button color-picker">
                             <form class="form-control">
                                 <label for="colorPick" class="form-label mb-0">Theme Color</label>
-                                <input type="color" class="form-control form-control-color" id="colorPick"
-                                    value="#0da487" title="Choose your color">
+                                <input type="color" class="form-control form-control-color" id="colorPick" value="#0da487" title="Choose your color">
                             </form>
                         </div>
                     </li>

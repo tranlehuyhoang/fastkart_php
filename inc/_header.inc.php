@@ -7,6 +7,7 @@ include_once __DIR__ .  '/../controller/review.class.php';
 include_once __DIR__ .  '/../controller/user.class.php';
 include_once __DIR__ .  '/../controller/cart.class.php';
 include_once __DIR__ .  '/../controller/checkout.class.php';
+include_once __DIR__ .  '/../controller/invoice.class.php';
 
 // $user = new user();
 $categoryclass = new category();
@@ -16,6 +17,7 @@ $productclass = new product();
 $reviewclass = new review();
 $cartclass = new cart();
 $checkoutclass = new checkout();
+$invoiceclass = new invoice();
 
 $category = $categoryclass->show_category();
 $categorys = $categoryclass->show_category();
@@ -457,7 +459,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                                             <ul class="user-box-name">
 
                                                 <li class="product-box-contain">
-                                                    <a href="http://localhost:1002/user">My Account</a>
+                                                    <a href="./user.php">My Account</a>
                                                 </li>
                                                 <li class="product-box-contain">
                                                     <i></i>
