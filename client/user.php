@@ -7,10 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
         $updateinvoi = $invoiceclass->updateorder($_GET['vnp_TxnRef']);
         $getinvoice = $invoiceclass->getOrdersByUser($_SESSION['userid']);
     } else {
+        echo "<script>window.location.href = './order-success.php?bill=" . $_GET['vnp_TxnRef'] . "';</script>";
     }
 } else {
     $getinvoice = $invoiceclass->getOrdersByUser($_SESSION['userid']);
 }
+
 
 ?>
 
@@ -680,7 +682,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                                                     <div class="product-order-detail">
                                                         <a href="product-left-thumbnail.html" class="order-image">
-                                                            <img src="http://localhost:1000/assets_client/box.png" style="width: 200px" class="blur-up lazyload" alt="">
+                                                            <img src="../public/assets_client/box.png" style="width: 200px" class="blur-up lazyload" alt="">
                                                         </a>
 
                                                         <div class="order-wrap">

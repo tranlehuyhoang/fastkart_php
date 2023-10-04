@@ -4,6 +4,7 @@ include_once __DIR__ . '/../inc/_header.inc.php';
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $carts = $checkoutclass->show_cart($_SESSION['userid']);
     $carts1 = $checkoutclass->show_cart($_SESSION['userid']);
+    $carts2 = $checkoutclass->show_cart($_SESSION['userid']);
 
     if (isset($carts)) {
 
@@ -15,16 +16,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
-    $checkout = $checkoutclass->addToOrder($_POST, $_SESSION['userid']);
-    if (isset($checkout)) {
+    $carts5 = $checkoutclass->show_cart($_SESSION['userid']);
 
-        echo '<pre>';
-        print_r($checkout);
-        echo '</pre>';
+    if (isset($carts5)) {
+        if ($carts5 && $carts5->num_rows > 0) {
+            $totals = 0;
+            $z = 0;
+            while ($result = $carts5->fetch_assoc()) {
+                $totals += $result['total_cost'];
+                $z = $result['user'];
+            }
+        }
+        // echo $totals;
+        $checkout = $checkoutclass->addToOrder($_POST, $_SESSION['userid'], $totals);
     }
 } else {
 }
 ?>
+
+
+
+
+
 
 
 <!-- mobile fix menu end -->
@@ -63,9 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                         <ul>
                             <li>
                                 <div class="checkout-icon">
-                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/ggihhudh.json"
-                                        trigger="loop-on-hover"
-                                        colors="primary:#121331,secondary:#646e78,tertiary:#0baf9a" class="lord-icon">
+                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/ggihhudh.json" trigger="loop-on-hover" colors="primary:#121331,secondary:#646e78,tertiary:#0baf9a" class="lord-icon">
                                     </lord-icon>
                                 </div>
                                 <div class="checkout-box">
@@ -79,8 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                 <div class="delivery-address-box">
                                                     <div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="jack"
-                                                                id="flexRadioDefault1">
+                                                            <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault1">
                                                         </div>
 
                                                         <div class="label">
@@ -105,8 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                             </li>
 
                                                             <li>
-                                                                <h6 class="text-content mb-0"><span
-                                                                        class="text-title">Phone
+                                                                <h6 class="text-content mb-0"><span class="text-title">Phone
                                                                         :</span> + 380 (0564) 53 - 29 - 68</h6>
                                                             </li>
                                                         </ul>
@@ -118,8 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                 <div class="delivery-address-box">
                                                     <div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="jack"
-                                                                id="flexRadioDefault2" checked="checked">
+                                                            <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault2" checked="checked">
                                                         </div>
 
                                                         <div class="label">
@@ -145,8 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                             </li>
 
                                                             <li>
-                                                                <h6 class="text-content mb-0"><span
-                                                                        class="text-title">Phone
+                                                                <h6 class="text-content mb-0"><span class="text-title">Phone
                                                                         :</span> + 380 (0564) 53 - 29 - 68</h6>
                                                             </li>
                                                         </ul>
@@ -160,8 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                             <li>
                                 <div class="checkout-icon">
-                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/oaflahpk.json"
-                                        trigger="loop-on-hover" colors="primary:#0baf9a" class="lord-icon">
+                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/oaflahpk.json" trigger="loop-on-hover" colors="primary:#0baf9a" class="lord-icon">
                                     </lord-icon>
                                 </div>
                                 <div class="checkout-box">
@@ -176,8 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                     <div class="delivery-category">
                                                         <div class="shipment-detail">
                                                             <div class="form-check custom-form-check hide-check-box">
-                                                                <input class="form-check-input" type="radio"
-                                                                    name="standard" id="standard" checked>
+                                                                <input class="form-check-input" type="radio" name="standard" id="standard" checked>
                                                                 <label class="form-check-label" for="standard">Standard
                                                                     Delivery Option</label>
                                                             </div>
@@ -190,10 +195,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                 <div class="delivery-option">
                                                     <div class="delivery-category">
                                                         <div class="shipment-detail">
-                                                            <div
-                                                                class="form-check mb-0 custom-form-check show-box-checked">
-                                                                <input class="form-check-input" type="radio"
-                                                                    name="standard" id="future">
+                                                            <div class="form-check mb-0 custom-form-check show-box-checked">
+                                                                <input class="form-check-input" type="radio" name="standard" id="future">
                                                                 <label class="form-check-label" for="future">Future
                                                                     Delivery Option</label>
                                                             </div>
@@ -213,12 +216,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                                         $693.48</h5>
                                                                     <h5 class="charge text-content">Delivery Charge
                                                                         $34.67
-                                                                        <button type="button" class="btn p-0"
-                                                                            data-bs-toggle="tooltip"
-                                                                            data-bs-placement="top"
-                                                                            title="Extra Charge">
-                                                                            <i
-                                                                                class="fa-solid fa-circle-exclamation"></i>
+                                                                        <button type="button" class="btn p-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Extra Charge">
+                                                                            <i class="fa-solid fa-circle-exclamation"></i>
                                                                         </button>
                                                                     </h5>
                                                                 </div>
@@ -241,9 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                             <li>
                                 <div class="checkout-icon">
-                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/qmcsqnle.json"
-                                        trigger="loop-on-hover" colors="primary:#0baf9a,secondary:#0baf9a"
-                                        class="lord-icon">
+                                    <lord-icon target=".nav-item" src="https://cdn.lordicon.com/qmcsqnle.json" trigger="loop-on-hover" colors="primary:#0baf9a,secondary:#0baf9a" class="lord-icon">
                                     </lord-icon>
                                 </div>
                                 <div class="checkout-box">
@@ -252,22 +249,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                     </div>
 
                                     <div class="checkout-detail">
-                                        <div class="accordion accordion-flush custom-accordion"
-                                            id="accordionFlushExample">
+                                        <div class="accordion accordion-flush custom-accordion" id="accordionFlushExample">
                                             <div class="accordion-item">
                                                 <div class="accordion-header" id="flush-headingFour">
-                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse"
-                                                        data-bs-target="#flush-collapseFour">
+                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour">
                                                         <div class="custom-form-check form-check mb-0">
-                                                            <label class="form-check-label" for="cash"><input
-                                                                    class="form-check-input mt-0" type="radio"
-                                                                    name="flexRadioDefault" id="cash" checked> Cash
+                                                            <label class="form-check-label" for="cash"><input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="cash" checked> Cash
                                                                 On Delivery</label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="flush-collapseFour" class="accordion-collapse collapse show"
-                                                    data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         <p class="cod-review">Pay digitally with SMS Pay
                                                             Link. Cash may not be accepted in COVID restricted
@@ -279,27 +271,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                             <div class="accordion-item">
                                                 <div class="accordion-header" id="flush-headingOne">
-                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse"
-                                                        data-bs-target="#flush-collapseOne">
+                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
                                                         <div class="custom-form-check form-check mb-0">
-                                                            <label class="form-check-label" for="credit"><input
-                                                                    class="form-check-input mt-0" type="radio"
-                                                                    name="flexRadioDefault" id="credit">
+                                                            <label class="form-check-label" for="credit"><input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="credit">
                                                                 Credit or Debit Card</label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         <div class="row g-2">
                                                             <div class="col-12">
                                                                 <div class="payment-method">
-                                                                    <div
-                                                                        class="form-floating mb-lg-3 mb-2 theme-form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="credit2"
-                                                                            placeholder="Enter Credit & Debit Card Number">
+                                                                    <div class="form-floating mb-lg-3 mb-2 theme-form-floating">
+                                                                        <input type="text" class="form-control" id="credit2" placeholder="Enter Credit & Debit Card Number">
                                                                         <label for="credit2">Enter Credit & Debit
                                                                             Card Number</label>
                                                                     </div>
@@ -307,28 +292,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                             </div>
 
                                                             <div class="col-xxl-4">
-                                                                <div
-                                                                    class="form-floating mb-lg-3 mb-2 theme-form-floating">
-                                                                    <input type="text" class="form-control" id="expiry"
-                                                                        placeholder="Enter Expiry Date">
+                                                                <div class="form-floating mb-lg-3 mb-2 theme-form-floating">
+                                                                    <input type="text" class="form-control" id="expiry" placeholder="Enter Expiry Date">
                                                                     <label for="expiry">Expiry Date</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-xxl-4">
-                                                                <div
-                                                                    class="form-floating mb-lg-3 mb-2 theme-form-floating">
-                                                                    <input type="text" class="form-control" id="cvv"
-                                                                        placeholder="Enter CVV Number">
+                                                                <div class="form-floating mb-lg-3 mb-2 theme-form-floating">
+                                                                    <input type="text" class="form-control" id="cvv" placeholder="Enter CVV Number">
                                                                     <label for="cvv">CVV Number</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-xxl-4">
-                                                                <div
-                                                                    class="form-floating mb-lg-3 mb-2 theme-form-floating">
-                                                                    <input type="password" class="form-control"
-                                                                        id="password" placeholder="Enter Password">
+                                                                <div class="form-floating mb-lg-3 mb-2 theme-form-floating">
+                                                                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
                                                                     <label for="password">Password</label>
                                                                 </div>
                                                             </div>
@@ -336,8 +315,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                             <div class="button-group mt-0">
                                                                 <ul>
                                                                     <li>
-                                                                        <button
-                                                                            class="btn btn-light shopping-button">Cancel</button>
+                                                                        <button class="btn btn-light shopping-button">Cancel</button>
                                                                     </li>
 
                                                                     <li>
@@ -353,45 +331,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                             <div class="accordion-item">
                                                 <div class="accordion-header" id="flush-headingTwo">
-                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse"
-                                                        data-bs-target="#flush-collapseTwo">
+                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
                                                         <div class="custom-form-check form-check mb-0">
-                                                            <label class="form-check-label" for="banking"><input
-                                                                    class="form-check-input mt-0" type="radio"
-                                                                    name="flexRadioDefault" id="banking">Net
+                                                            <label class="form-check-label" for="banking"><input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="banking">Net
                                                                 Banking</label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         <h5 class="text-uppercase mb-4">Select Your Bank
                                                         </h5>
                                                         <div class="row g-2">
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="bank1">
-                                                                    <label class="form-check-label"
-                                                                        for="bank1">Industrial & Commercial
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="bank1">
+                                                                    <label class="form-check-label" for="bank1">Industrial & Commercial
                                                                         Bank</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="bank2">
-                                                                    <label class="form-check-label"
-                                                                        for="bank2">Agricultural Bank</label>
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="bank2">
+                                                                    <label class="form-check-label" for="bank2">Agricultural Bank</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="bank3">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="bank3">
                                                                     <label class="form-check-label" for="bank3">Bank
                                                                         of America</label>
                                                                 </div>
@@ -399,17 +368,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="bank4">
-                                                                    <label class="form-check-label"
-                                                                        for="bank4">Construction Bank Corp.</label>
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="bank4">
+                                                                    <label class="form-check-label" for="bank4">Construction Bank Corp.</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="bank5">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="bank5">
                                                                     <label class="form-check-label" for="bank5">HSBC
                                                                         Holdings</label>
                                                                 </div>
@@ -417,8 +383,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="bank6">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="bank6">
                                                                     <label class="form-check-label" for="bank6">JPMorgan
                                                                         Chase & Co.</label>
                                                                 </div>
@@ -427,8 +392,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                                             <div class="col-12">
                                                                 <div class="select-option">
                                                                     <div class="form-floating theme-form-floating">
-                                                                        <select class="form-select theme-form-select"
-                                                                            aria-label="Default select example">
+                                                                        <select class="form-select theme-form-select" aria-label="Default select example">
                                                                             <option value="hsbc">HSBC Holdings
                                                                             </option>
                                                                             <option value="loyds">Lloyds Banking
@@ -451,35 +415,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                             <div class="accordion-item">
                                                 <div class="accordion-header" id="flush-headingThree">
-                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse"
-                                                        data-bs-target="#flush-collapseThree">
+                                                    <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
                                                         <div class="custom-form-check form-check mb-0">
-                                                            <label class="form-check-label" for="wallet"><input
-                                                                    class="form-check-input mt-0" type="radio"
-                                                                    name="flexRadioDefault" id="wallet">My
+                                                            <label class="form-check-label" for="wallet"><input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="wallet">My
                                                                 Wallet</label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         <h5 class="text-uppercase mb-4">Select Your Wallet
                                                         </h5>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <label class="form-check-label" for="amazon"><input
-                                                                            class="form-check-input mt-0" type="radio"
-                                                                            name="flexRadioDefault" id="amazon">Amazon
+                                                                    <label class="form-check-label" for="amazon"><input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="amazon">Amazon
                                                                         Pay</label>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="gpay">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="gpay">
                                                                     <label class="form-check-label" for="gpay">Google
                                                                         Pay</label>
                                                                 </div>
@@ -487,8 +444,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="airtel">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="airtel">
                                                                     <label class="form-check-label" for="airtel">Airtel
                                                                         Money</label>
                                                                 </div>
@@ -496,8 +452,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="paytm">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="paytm">
                                                                     <label class="form-check-label" for="paytm">Paytm
                                                                         Pay</label>
                                                                 </div>
@@ -505,8 +460,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="jio">
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="jio">
                                                                     <label class="form-check-label" for="jio">JIO
                                                                         Money</label>
                                                                 </div>
@@ -514,10 +468,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
 
                                                             <div class="col-md-6">
                                                                 <div class="custom-form-check form-check">
-                                                                    <input class="form-check-input mt-0" type="radio"
-                                                                        name="flexRadioDefault" id="free">
-                                                                    <label class="form-check-label"
-                                                                        for="free">Freecharge</label>
+                                                                    <input class="form-check-input mt-0" type="radio" name="flexRadioDefault" id="free">
+                                                                    <label class="form-check-label" for="free">Freecharge</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -547,22 +499,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                     $i = 0;
                                     while ($result = $carts->fetch_assoc()) {
                                         $i += $result['total_cost'];
-                                        // print_r($result);
-                                        // echo '</pre>';
+
                                         # code...
                             ?>
-                            <li>
-                                <img src="../public/<?php echo $result['image'] ?>"
-                                    class="img-fluid blur-up lazyloaded checkout-image" alt="">
-                                <h4>Bell pepper <span>X <?php echo $result['quantity'] ?></span></h4>
-                                <h4 class="price">$<?php echo $result['price'] ?></h4>
-                            </li>
-                            <?php
-                                        $i++;
+                                        <li>
+                                            <img src="../public/<?php echo $result['image'] ?>" class="img-fluid blur-up lazyloaded checkout-image" alt="">
+                                            <h4>Bell pepper <span>X <?php echo $result['quantity'] ?></span></h4>
+                                            <h4 class="price">$<?php echo $result['price'] ?></h4>
+                                        </li>
+                                    <?php
+
                                     }
                                 } else {
                                     ?>
-                            <?php
+                                <?php
                                 }
                             } else {
                                 ?>
@@ -632,19 +582,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])) {
                                 # code...
                     ?>
 
-                    <?php
-                                $i++;
-                            } ?>
-                    <form action="" method="post">
-                        <input type="number" style="display: none;" name="user" value="<?php echo $z ?>" id="">
+                            <?php
 
-                        <button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold" type="submit">Place
-                            Order</button>
-                    </form>
-                    <?php
+                            } ?>
+                            <form action="" method="post">
+                                <input type="number" style="display: none;" name="user" value="<?php echo $z ?>" id="">
+
+                                <button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold" type="submit">Place
+                                    Order</button>
+                            </form>
+                        <?php
                         } else {
                         ?>
-                    <?php
+                        <?php
                         }
                     } else {
                         ?>
