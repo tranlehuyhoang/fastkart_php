@@ -203,12 +203,12 @@ class invoice
             // Content
             $mail->isHTML(true); // Set email format to HTML
             $mail->Subject = 'Here is the subject'; // Tiêu đề
-            $mail->Body = 'This is the HTML message body in bold!'; // Nội dung
+            $mail->Body = file_get_contents('http://localhost/dam/client/email.php?bill=69');
 
             $mail->send();
-            echo 'Message has been sent';
+            // echo 'Message has been sent';
         } catch (Exception $e) {
-            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+            // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
     }
 }

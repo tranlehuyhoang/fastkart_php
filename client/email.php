@@ -8,10 +8,9 @@ if (!isset($_SESSION['userid'])) {
     echo "<script>window.location.href = './login.php';</script>";
 }
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
-    $get_invoice = $invoiceclass->get_invoice($_SESSION['userid'], $_GET['bill']);
-    $get_invoice1 = $invoiceclass->get_invoice($_SESSION['userid'], $_GET['bill']);
-    $get_user_orderss = $invoiceclass->get_order_user_bill($_GET['bill'], $_SESSION['userid']);
-    $sendmail = $invoiceclass->sendmail($_GET['bill'], $_SESSION['userid']);
+    $get_invoice = $invoiceclass->get_invoice($_GET['user'], $_GET['bill']);
+    $get_invoice1 = $invoiceclass->get_invoice($_GET['user'], $_GET['bill']);
+    $get_user_orderss = $invoiceclass->get_order_user_bill($_GET['bill'], $_GET['user']);
 }
 
 
