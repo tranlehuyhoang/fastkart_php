@@ -203,7 +203,15 @@ class invoice
             // Content
             $mail->isHTML(true); // Set email format to HTML
             $mail->Subject = 'Here is the subject'; // Tiêu đề
-            $mail->Body = file_get_contents('http://localhost/dam/client/email.php?bill=69');
+
+            $emailContent = file_get_contents('http://localhost/dam/client/email.php?bill=' . $user . '&user=' . $id);
+            if ($emailContent !== false) {
+                $searchArr = ["YOUR-PLACEHOLDER-FIRST", "YOUR-PLACEHOLDER-SECOND"];
+                $replaceArr = [$id, $user];
+                $mail->Body = str_replace($searchArr, $replaceArr, $emailContent);
+            } else {
+                throw new Exception('Failed to retrieve email content.');
+            }
 
             $mail->send();
             // echo 'Message has been sent';
