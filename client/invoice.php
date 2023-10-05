@@ -9,6 +9,7 @@ if (!isset($_SESSION['userid'])) {
 }
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
     $get_invoice = $invoiceclass->get_invoice($_SESSION['userid'], $_GET['bill']);
+    $invoiceclass->sendmail($_SESSION['userid'], $_GET['bill']);
 }
 
 

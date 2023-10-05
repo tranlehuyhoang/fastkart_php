@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
     $get_invoice = $invoiceclass->get_invoice($_SESSION['userid'], $_GET['bill']);
     $get_invoice1 = $invoiceclass->get_invoice($_SESSION['userid'], $_GET['bill']);
     $get_user_orderss = $invoiceclass->get_order_user_bill($_GET['bill'], $_SESSION['userid']);
+    $sendmail = $invoiceclass->sendmail($_GET['bill'], $_SESSION['userid']);
 }
 
 
@@ -266,6 +267,9 @@ if (isset($get_user_orderss)) {
     ?>
 <?php
 }
+?>
+<?php
+
 ?>
 
 </html>
