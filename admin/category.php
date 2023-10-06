@@ -1,6 +1,8 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+$product1 = $categoryclass->show_category();
+
 ?>
 
 
@@ -41,14 +43,21 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                     </thead>
 
                                     <tbody>
+                                        <?php
+                                        if (isset($product1)) {
+                                            if ($product1 && $product1->num_rows > 0) {
+                                                $i = 0;
+                                                while ($result = $product1->fetch_assoc()) {
+                                                    # code...
+                                        ?>
                                         <tr>
-                                            <td>rau củ</td>
+                                            <td><?php echo $result['name'] ?></td>
 
 
                                             <td>
                                                 <div class="table-image">
 
-                                                    <img src="../public/images/1696151259_product-5.png"
+                                                    <img src="../public/<?php echo $result['image'] ?>"
                                                         class="img-fluid" alt="">
                                                 </div>
                                             </td>
@@ -80,84 +89,18 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                                 </ul>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>rau củ</td>
-
-
-                                            <td>
-                                                <div class="table-image">
-
-                                                    <img src="../public/images/1696151242_product-5.png"
-                                                        class="img-fluid" alt="">
-                                                </div>
-                                            </td>
-
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html" data-bs-original-title="" title="">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle"
-                                                            data-bs-original-title="" title="">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>rau củ</td>
-
-
-                                            <td>
-                                                <div class="table-image">
-
-                                                    <img src="../public/images/1696151097_product-5.png"
-                                                        class="img-fluid" alt="">
-                                                </div>
-                                            </td>
-
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html" data-bs-original-title="" title="">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle"
-                                                            data-bs-original-title="" title="">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                ?>
+                                        <?php
+                                            }
+                                        } else {
+                                            ?>
+                                        <?php
+                                        }
+                                        ?>
 
 
                                     </tbody>

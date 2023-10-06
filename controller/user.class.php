@@ -45,7 +45,7 @@ class user
 
     public function show_user()
     {
-        $query = "SELECT * FROM clone_user order by userid desc";
+        $query = "SELECT * FROM  users order by id desc";
         $result = $this->db->select($query);
 
         return $result;

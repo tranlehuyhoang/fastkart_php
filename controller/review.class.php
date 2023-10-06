@@ -25,4 +25,13 @@ class review
 
         return $result;
     }
+    public function show_review()
+    {
+        $query = "SELECT * 
+                  FROM review 
+                  order by id";
+        $result = $this->db->select($query);
+
+        return $result;
+    }
 }

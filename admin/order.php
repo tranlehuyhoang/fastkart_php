@@ -33,7 +33,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                             <td>
                                                 <a class="d-block" data-bs-original-title="" title="">
                                                     <span class="order-image">
-                                                        <img src="http://localhost:1000/assets_admin/images/product/1.png"
+                                                        <img src="../public/assets_admin/images/product/1.png"
                                                             class="img-fluid" alt="users">
                                                     </span>
                                                 </a>
@@ -86,8 +86,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/2.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/2.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -138,8 +137,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/3.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/3.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -190,8 +188,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/4.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/4.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -242,8 +239,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/5.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/5.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -294,8 +290,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/6.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/6.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -346,8 +341,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/7.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/7.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -398,8 +392,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/8.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/8.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -450,8 +443,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/9.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/9.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -502,8 +494,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/10.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/10.png" alt="users">
                                                 </span>
                                             </td>
 
@@ -554,8 +545,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <tr data-bs-toggle="offcanvas" href="#order-details">
                                             <td>
                                                 <span class="order-image">
-                                                    <img src="http://localhost:1000/assets_admin/images/product/11.png"
-                                                        alt="users">
+                                                    <img src="../public/assets_admin/images/product/11.png" alt="users">
                                                 </span>
                                             </td>
 

@@ -96,14 +96,13 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <h4>Category</h4>
                         </div>
                     </div>
-                    http://localhost:1000/
+                    ../public/
                     <div class="card-body p-0">
                         <div class="category-slider no-arrow">
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/vegetable.svg"
-                                            class="img-fluid" alt="">
+                                        <img src="../public/assets_admin/svg/vegetable.svg" class="img-fluid" alt="">
                                     </a>
 
                                     <a href="javascript:void(0)" class="category-name">
@@ -115,8 +114,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/cup.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/cup.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Beverages</h6>
@@ -127,8 +125,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/meats.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/meats.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Meats & Seafood</h6>
@@ -139,8 +136,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/breakfast.svg"
-                                            class="img-fluid" alt="">
+                                        <img src="../public/assets_admin/svg/breakfast.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Breakfast</h6>
@@ -151,8 +147,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/frozen.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/frozen.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Frozen Foods</h6>
@@ -163,8 +158,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/milk.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/milk.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Milk & Dairies</h6>
@@ -175,8 +169,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/pet.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/pet.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Pet Food</h6>
@@ -187,8 +180,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/vegetable.svg"
-                                            class="img-fluid" alt="">
+                                        <img src="../public/assets_admin/svg/vegetable.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Vegetables & Fruit</h6>
@@ -199,8 +191,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/cup.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/cup.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Beverages</h6>
@@ -211,8 +202,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/meats.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/meats.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Meats & Seafood</h6>
@@ -223,8 +213,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/breakfast.svg"
-                                            class="img-fluid" alt="">
+                                        <img src="../public/assets_admin/svg/breakfast.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Breakfast</h6>
@@ -235,8 +224,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/frozen.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/frozen.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Frozen Foods</h6>
@@ -247,8 +235,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/milk.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/milk.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Milk & Dairies</h6>
@@ -259,8 +246,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             <div>
                                 <div class="dashboard-category">
                                     <a href="javascript:void(0)" class="category-image">
-                                        <img src="http://localhost:1000/assets_admin/svg/pet.svg" class="img-fluid"
-                                            alt="">
+                                        <img src="../public/assets_admin/svg/pet.svg" class="img-fluid" alt="">
                                     </a>
                                     <a href="javascript:void(0)" class="category-name">
                                         <h6>Pet Food</h6>
@@ -301,8 +287,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                         <div class="best-selling-box d-sm-flex d-none">
                             <span>Short By:</span>
                             <div class="dropdown">
-                                <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" data-bs-auto-close="true">Today</button>
+                                <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="true">Today</button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -323,8 +308,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                             <td>
                                                 <div class="best-product-box">
                                                     <div class="product-image">
-                                                        <img src="http://localhost:1000/assets_admin/images/product/1.png"
-                                                            class="img-fluid" alt="Product">
+                                                        <img src="../public/assets_admin/images/product/1.png" class="img-fluid" alt="Product">
                                                     </div>
                                                     <div class="product-name">
                                                         <h5>Aata Buscuit</h5>
@@ -366,8 +350,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                             <td>
                                                 <div class="best-product-box">
                                                     <div class="product-image">
-                                                        <img src="http://localhost:1000/assets_admin/images/product/2.png"
-                                                            class="img-fluid" alt="Product">
+                                                        <img src="../public/assets_admin/images/product/2.png" class="img-fluid" alt="Product">
                                                     </div>
                                                     <div class="product-name">
                                                         <h5>Aata Buscuit</h5>
@@ -409,8 +392,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                             <td>
                                                 <div class="best-product-box">
                                                     <div class="product-image">
-                                                        <img src="http://localhost:1000/assets_admin/images/product/3.png"
-                                                            class="img-fluid" alt="Product">
+                                                        <img src="../public/assets_admin/images/product/3.png" class="img-fluid" alt="Product">
                                                     </div>
                                                     <div class="product-name">
                                                         <h5>Aata Buscuit</h5>
@@ -468,8 +450,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                         <div class="best-selling-box d-sm-flex d-none">
                             <span>Short By:</span>
                             <div class="dropdown">
-                                <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                    data-bs-toggle="dropdown" data-bs-auto-close="true">Today</button>
+                                <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" data-bs-auto-close="true">Today</button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -790,8 +771,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                         <ul class="to-do-list">
                             <li class="to-do-item">
                                 <div class="form-check user-checkbox">
-                                    <input class="checkbox_animated check-it" type="checkbox" value=""
-                                        id="flexCheckDefault">
+                                    <input class="checkbox_animated check-it" type="checkbox" value="" id="flexCheckDefault">
                                 </div>
                                 <div class="to-do-list-name">
                                     <strong>Pick up kids from school</strong>
@@ -800,8 +780,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             </li>
                             <li class="to-do-item">
                                 <div class="form-check user-checkbox">
-                                    <input class="checkbox_animated check-it" type="checkbox" value=""
-                                        id="flexCheckDefault1">
+                                    <input class="checkbox_animated check-it" type="checkbox" value="" id="flexCheckDefault1">
                                 </div>
                                 <div class="to-do-list-name">
                                     <strong>Prepare or presentation.</strong>
@@ -810,8 +789,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             </li>
                             <li class="to-do-item">
                                 <div class="form-check user-checkbox">
-                                    <input class="checkbox_animated check-it" type="checkbox" value=""
-                                        id="flexCheckDefault2">
+                                    <input class="checkbox_animated check-it" type="checkbox" value="" id="flexCheckDefault2">
                                 </div>
                                 <div class="to-do-list-name">
                                     <strong>Create invoice</strong>
@@ -820,8 +798,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                             </li>
                             <li class="to-do-item">
                                 <div class="form-check user-checkbox">
-                                    <input class="checkbox_animated check-it" type="checkbox" value=""
-                                        id="flexCheckDefault3">
+                                    <input class="checkbox_animated check-it" type="checkbox" value="" id="flexCheckDefault3">
                                 </div>
                                 <div class="to-do-list-name">
                                     <strong>Meeting with Alisa</strong>

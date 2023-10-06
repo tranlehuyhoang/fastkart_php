@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+$product1 = $productclass->show_product();
 ?>
 
 
@@ -44,498 +45,64 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159520_12.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>4</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$4</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159516_11.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>4</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$4</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159512_10.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>4</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$4</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159508_9.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>4</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$4</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159498_8.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>3</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$3</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159491_7.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>3</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$3</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159488_6.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>3</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$3</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159481_5.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>ớt ngon</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$100</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159459_4.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>2</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$2</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159455_3.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>2</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$2</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159447_2.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>2</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$2</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="table-image">
-                                                    <img src="../public/images/1696159332_1.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </td>
-
-                                            <td>1</td>
-                                            <td>rau củ</td>
-
-
-
-
-                                            <td class="td-price">$1</td>
-
-
-
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                        if (isset($product1)) {
+                                            if ($product1 && $product1->num_rows > 0) {
+                                                $i = 0;
+                                                while ($result = $product1->fetch_assoc()) {
+                                                    # code...
+                                        ?>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="table-image">
+                                                                <img src="../public/<?php echo $result['image'] ?>" class="img-fluid" alt="">
+                                                            </div>
+                                                        </td>
+
+                                                        <td><?php echo $result['name'] ?></td>
+                                                        <td>rau củ</td>
+
+
+
+
+                                                        <td class="td-price">$<?php echo $result['price'] ?></td>
+
+
+
+                                                        <td>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="order-detail.html">
+                                                                        <i class="ri-eye-line"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="javascript:void(0)">
+                                                                        <i class="ri-pencil-line"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+                                                                        <i class="ri-delete-bin-line"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                ?>
+                                            <?php
+                                            }
+                                        } else {
+                                            ?>
+                                        <?php
+                                        }
+                                        ?>
 
 
                                     </tbody>
@@ -562,5 +129,5 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
 
     <?php
 
-include_once __DIR__ . '/../inc/_footer.admin.inc.php';
-?>
+    include_once __DIR__ . '/../inc/_footer.admin.inc.php';
+    ?>

@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+$product1 = $userclass->show_user();
 ?>
 
 <div class="page-body">
@@ -28,463 +29,73 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                     <tr>
                                         <th>User</th>
                                         <th>Name</th>
-                                        <th>Phone</th>
+
                                         <th>Email</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/1.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
 
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Everett C. Green</span>
-                                                <span>Essex Court</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 802 - 370 - 2430</td>
-
-                                        <td>EverettCGreen@rhyta.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/2.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Caroline L. Harris</span>
-                                                <span>Davis Lane</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 720 - 276 - 9403</td>
-
-                                        <td>CarolineLHarris@rhyta.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/3.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Lucy j. Morile</span>
-                                                <span>Clifton</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 351 - 756 - 6549</td>
-
-                                        <td>LucyMorile456@gmail.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/4.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Jennifer A. Straight</span>
-                                                <span>Brunswick</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 912 - 265 - 1550</td>
-
-                                        <td>JenniferAStraight@rhyta.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/5.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Louise J. Stiles</span>
-                                                <span>Indianapolis</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 304 - 921 - 8122</td>
-
-                                        <td>KevinAMillett@jourrapide.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/1.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Scott T. Thomas</span>
-                                                <span>Kotzebue</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 907 - 442 - 8122</td>
-
-                                        <td>scott.thomas@packiu.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/2.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Everett C. Green</span>
-                                                <span>Essex Court</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 218 - 244 - 7026</td>
-
-                                        <td>KevinAMillett@jourrapide.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/3.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Dillon J. Bradshaw</span>
-                                                <span>Redbud Drive</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 347 - 649 - 7283</td>
-
-                                        <td>DillonJBradshaw@teleworm.us</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/4.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Lorna M. Bonner</span>
-                                                <span>Broadway Street</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 843 - 765 - 6166</td>
-
-                                        <td>LornaMBonner@teleworm.us</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/5.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Everett C. Green</span>
-                                                <span>Essex Court</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 802 - 370 - 2430</td>
-
-                                        <td>EverettCGreen@rhyta.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="table-image">
-                                                <img src="http://localhost:1000/assets_admin/images/users/1.jpg" class="img-fluid" alt="">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="user-name">
-                                                <span>Lorraine D. McDowell</span>
-                                                <span>Woodland Terrace</span>
-                                            </div>
-                                        </td>
-
-                                        <td>+ 916 - 942 - 7555</td>
-
-                                        <td>LorraineDMcDowell@dayrep.com</td>
-
-                                        <td>
-                                            <ul>
-                                                <li>
-                                                    <a href="order-detail.html" data-bs-original-title="" title="">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                        <i class="ri-pencil-line"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
-                                                        <i class="ri-delete-bin-line"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    if (isset($product1)) {
+                                        if ($product1 && $product1->num_rows > 0) {
+                                            $i = 0;
+                                            while ($result = $product1->fetch_assoc()) {
+                                                # code...
+                                    ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="table-image">
+                                                            <img src="../public/assets_admin/images/users/5.jpg" class="img-fluid" alt="">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="user-name">
+                                                            <span><?php echo $result['name'] ?></span>
+                                                            <span><?php echo $result['role'] == '1' ? 'Admin' : 'User' ?></span>
+                                                        </div>
+                                                    </td>
+
+
+
+                                                    <td><?php echo $result['email'] ?></td>
+
+                                                    <td>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="order-detail.html" data-bs-original-title="" title="">
+                                                                    <i class="ri-eye-line"></i>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="javascript:void(0)" data-bs-original-title="" title="">
+                                                                    <i class="ri-pencil-line"></i>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
+                                                                    <i class="ri-delete-bin-line"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                                $i++;
+                                            }
+                                        } else {
+                                            ?>
+                                        <?php
+                                        }
+                                    } else {
+                                        ?>
+                                    <?php
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
