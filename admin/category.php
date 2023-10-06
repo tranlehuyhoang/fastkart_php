@@ -16,11 +16,8 @@ $product1 = $categoryclass->show_category();
                         <div class="title-header option-title">
                             <h5>All Category</h5>
                             <form class="d-inline-flex">
-                                <a href="add-new-category.html" class="align-items-center btn btn-theme d-flex"
-                                    data-bs-original-title="" title="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-plus-square">
+                                <a href="add-new-category.html" class="align-items-center btn btn-theme d-flex" data-bs-original-title="" title="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
                                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                                         <line x1="12" y1="8" x2="12" y2="16"></line>
                                         <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -50,51 +47,48 @@ $product1 = $categoryclass->show_category();
                                                 while ($result = $product1->fetch_assoc()) {
                                                     # code...
                                         ?>
-                                        <tr>
-                                            <td><?php echo $result['name'] ?></td>
+                                                    <tr>
+                                                        <td><?php echo $result['name'] ?></td>
 
 
-                                            <td>
-                                                <div class="table-image">
+                                                        <td>
+                                                            <div class="table-image">
 
-                                                    <img src="../public/<?php echo $result['image'] ?>"
-                                                        class="img-fluid" alt="">
-                                                </div>
-                                            </td>
-
+                                                                <img src="../public/<?php echo $result['image'] ?>" class="img-fluid" alt="">
+                                                            </div>
+                                                        </td>
 
 
 
-                                            <td>
-                                                <ul>
-                                                    <li>
-                                                        <a href="order-detail.html" data-bs-original-title="" title="">
-                                                            <i class="ri-eye-line"></i>
-                                                        </a>
-                                                    </li>
 
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-original-title="" title="">
-                                                            <i class="ri-pencil-line"></i>
-                                                        </a>
-                                                    </li>
+                                                        <td>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="order-detail.html" data-bs-original-title="" title="">
+                                                                        <i class="ri-eye-line"></i>
+                                                                    </a>
+                                                                </li>
 
-                                                    <li>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalToggle"
-                                                            data-bs-original-title="" title="">
-                                                            <i class="ri-delete-bin-line"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <?php
+                                                                <li>
+                                                                    <a href="javascript:void(0)" data-bs-original-title="" title="">
+                                                                        <i class="ri-pencil-line"></i>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-bs-original-title="" title="">
+                                                                        <i class="ri-delete-bin-line"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                <?php
                                                     $i++;
                                                 }
                                             } else {
                                                 ?>
-                                        <?php
+                                            <?php
                                             }
                                         } else {
                                             ?>

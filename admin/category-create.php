@@ -1,6 +1,9 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $categoryclass->insert_category($_POST);
+}
 ?>
 
 <div class="page-body">
@@ -17,15 +20,12 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                     <h5>Category Information</h5>
                                 </div>
 
-                                <form class="theme-form theme-form-2 mega-form" method="POST"
-                                    action="../public/admin/category" enctype="multipart/form-data">
-                                    <input type="hidden" name="_token" value="IjlXCCKF9soniAQd9wZ3xXCpwSfgtKbM0Q4i33vy"
-                                        autocomplete="off" data-bs-original-title="" title="">
+                                <form class="theme-form theme-form-2 mega-form" method="POST" action="" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="IjlXCCKF9soniAQd9wZ3xXCpwSfgtKbM0Q4i33vy" autocomplete="off" data-bs-original-title="" title="">
                                     <div class="mb-4 row align-items-center">
                                         <label class="form-label-title col-sm-3 mb-0">Category Name</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="name"
-                                                placeholder="Category Name" data-bs-original-title="" title="">
+                                            <input class="form-control" type="text" name="name" placeholder="Category Name" data-bs-original-title="" title="">
                                         </div>
                                     </div>
 
@@ -38,13 +38,11 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                                     <i class="ri-upload-2-line"></i>
                                                     <p>Choose an image file or drag it here.</p>
                                                 </div>
-                                                <input type="file" name="image" class="dropzone"
-                                                    data-bs-original-title="" title="">
+                                                <input type="file" name="image" class="dropzone" data-bs-original-title="" title="">
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary ms-auto mt-4" data-bs-original-title=""
-                                        title="">Save</button>
+                                    <button type="submit" class="btn btn-primary ms-auto mt-4" data-bs-original-title="" title="">Save</button>
 
                                 </form>
                             </div>

@@ -1,6 +1,9 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['bill'])) {
+    $product1 = $invoiceclass->get_invoice_admin($_GET['bill']);
+}
 ?>
 <div class="page-body">
     <!-- tracking table start -->
@@ -37,74 +40,67 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                             </thead>
 
                                             <tbody>
+                                                <?php
+                                                if (isset($product1)) {
+                                                    if ($product1 && $product1->num_rows > 0) {
+                                                        $iz = 0;
+                                                        while ($result = $product1->fetch_assoc()) {
+                                                            # code...$iz
+                                                            $iz++;
+                                                ?>
                                                 <tr class="table-order">
                                                     <td>
                                                         <a href="javascript:void(0)">
-                                                            <img src="assets/images/profile/1.jpg" class="img-fluid blur-up lazyload" alt="">
+                                                            <img src="../public/<?php echo $result['image'] ?>"
+                                                                class="img-fluid blur-up lazyload" alt="">
                                                         </a>
                                                     </td>
                                                     <td>
                                                         <p>Product Name</p>
-                                                        <h5>Outwear &amp; Coats</h5>
+                                                        <h5><?php echo $result['name'] ?></h5>
                                                     </td>
                                                     <td>
                                                         <p>Quantity</p>
-                                                        <h5>1</h5>
+                                                        <h5><?php echo $result['quantity'] ?></h5>
                                                     </td>
                                                     <td>
                                                         <p>Price</p>
-                                                        <h5>$63.54</h5>
+                                                        <h5>$<?php echo $result['price'] ?>.00</h5>
                                                     </td>
                                                 </tr>
 
-                                                <tr class="table-order">
-                                                    <td>
-                                                        <a href="javascript:void(0)">
-                                                            <img src="assets/images/profile/2.jpg" class="img-fluid blur-up lazyload" alt="">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <p>Product Name</p>
-                                                        <h5>Slim Fit Plastic Coat</h5>
-                                                    </td>
-                                                    <td>
-                                                        <p>Quantity</p>
-                                                        <h5>5</h5>
-                                                    </td>
-                                                    <td>
-                                                        <p>Price</p>
-                                                        <h5>$63.54</h5>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="table-order">
-                                                    <td>
-                                                        <a href="javascript:void(0)">
-                                                            <img src="assets/images/profile/3.jpg" class="img-fluid blur-up lazyload" alt="">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <p>Product Name</p>
-                                                        <h5>Men's Sweatshirt</h5>
-                                                    </td>
-                                                    <td>
-                                                        <p>Quantity</p>
-                                                        <h5>1</h5>
-                                                    </td>
-                                                    <td>
-                                                        <p>Price</p>
-                                                        <h5>$63.54</h5>
-                                                    </td>
-                                                </tr>
+                                                <?php
+                                                            $i++;
+                                                        }
+                                                    } else {
+                                                        ?> <?php
+                                                    }
+                                                } else {
+                                                        ?> <?php
+                                                    }
+                                                        ?>
                                             </tbody>
+                                            <?php
+                                $get_invoice1 = $invoiceclass->get_invoice_admin( $_GET['bill']);
 
+                                if (isset($get_invoice1)) {
+                                    if ($get_invoice1 && $get_invoice1->num_rows > 0) {
+                                        $totals = 0;
+                                        $z = 0;
+                                        while ($result = $get_invoice1->fetch_assoc()) {
+                                            $totals += $result['total_price'];
+                                            $z = $result['user'];
+                                        }
+                                    }
+                                }
+                                ?>
                                             <tfoot>
                                                 <tr class="table-order">
                                                     <td colspan="3">
                                                         <h5>Subtotal :</h5>
                                                     </td>
                                                     <td>
-                                                        <h4>$55.00</h4>
+                                                        <h4>$<?php echo $totals ?>.00</h4>
                                                     </td>
                                                 </tr>
 
@@ -113,7 +109,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                                         <h5>Shipping :</h5>
                                                     </td>
                                                     <td>
-                                                        <h4>$12.00</h4>
+                                                        <h4>$0.00</h4>
                                                     </td>
                                                 </tr>
 
@@ -122,7 +118,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                                         <h5>Tax(GST) :</h5>
                                                     </td>
                                                     <td>
-                                                        <h4>$10.00</h4>
+                                                        <h4>$0.00</h4>
                                                     </td>
                                                 </tr>
 
@@ -131,7 +127,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                                         <h4 class="theme-color fw-bold">Total Price :</h4>
                                                     </td>
                                                     <td>
-                                                        <h4 class="theme-color fw-bold">$6935.00</h4>
+                                                        <h4 class="theme-color fw-bold">$<?php echo $totals ?>.00</h4>
                                                     </td>
                                                 </tr>
                                             </tfoot>

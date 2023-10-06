@@ -15,8 +15,31 @@ class category
     }
     public function insert_category($data)
     {
-    }
+        $name = $data['name'];
 
+        // Handle file upload
+        if ($_FILES['image']['error'] === 0) {
+            $uploadDir = __DIR__ . '/../public/images/';
+            $fileName = $_FILES['image']['name'];
+            $tempFile = $_FILES['image']['tmp_name'];
+            $targetFile = $uploadDir . $fileName;
+
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($tempFile, $targetFile)) {
+                // File uploaded successfully, save the category information in the database
+                $imagePath = 'images/' . $fileName; // Relative path to the image file
+
+                // Insert the category into the database
+                $query = "INSERT INTO category (name, image) VALUES ('$name', '$imagePath')";
+                $this->db->insert($query);
+
+                echo "<script>window.location.href = './category.php';</script>";
+            } else {
+                // Failed to move the uploaded file
+                echo "Failed to upload file.";
+            }
+        }
+    }
     public function show_category()
     {
         $query = "SELECT * FROM category order by id desc";

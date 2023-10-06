@@ -27,9 +27,12 @@ class review
     }
     public function show_review()
     {
-        $query = "SELECT * 
-                  FROM review 
-                  order by id";
+        $query = "SELECT  review.*, users.* ,product.name as product_name
+        FROM review
+        JOIN users ON users.id = review.user
+        JOIN product ON product.id = review.product
+        ORDER BY review.id DESC;
+        ";
         $result = $this->db->select($query);
 
         return $result;

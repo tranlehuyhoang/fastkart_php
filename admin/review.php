@@ -1,6 +1,8 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+$product1 = $reviewclass->show_review();
+
 ?>
 
 <div class="page-body">
@@ -28,324 +30,59 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>01</td>
-                                            <td>Maureen Biologist</td>
-                                            <td>Outwear &amp; Coats</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                        if (isset($product1)) {
+                                            if ($product1 && $product1->num_rows > 0) {
+                                                $is = 0;
+                                                while ($result = $product1->fetch_assoc()) {
+                                                    $is++
+                                        ?>
+                                                    <tr>
+                                                        <td><?php echo $is ?></td>
+                                                        <td><?php echo $result['name'] ?></td>
+                                                        <td><?php echo $result['product_name'] ?></td>
+                                                        <td>
+                                                            <ul class="rating">
+                                                                <?php
+                                                                for ($i = 0; $i < 5; $i++) {
+                                                                    if ($i < $result['rate']) {
+                                                                ?> <li>
+                                                                            <i class="fas fa-star theme-color"></i>
+                                                                        </li>
+                                                                    <?php
+                                                                    } else {
 
-                                        <tr>
-                                            <td>02</td>
-                                            <td>Caroline Harris</td>
-                                            <td>Slim Fit Plastic Coat</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
+                                                                    ?> <li>
+                                                                            <i class="fas fa-star"></i>
+                                                                        </li>
+                                                                <?php
 
-                                        <tr>
-                                            <td>03</td>
-                                            <td>Lucy Morile</td>
-                                            <td>Men's Sweatshirt</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>04</td>
-                                            <td>Jennifer Straight</td>
-                                            <td>Men's Hoodie t-shirt</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-cross">
-                                                <i class="ri-close-circle-line"></i>
-                                            </td>
-                                        </tr>
+                                                                    }
+                                                                }
+                                                                ?>
 
-                                        <tr>
-                                            <td>05</td>
-                                            <td>Kevin Millett</td>
-                                            <td>Outwear &amp; Coats</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>06</td>
-                                            <td>czxc</td>
-                                            <td>Slim Fit Plastic Coat</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-cross">
-                                                <i class="ri-close-circle-line"></i>
-                                            </td>
-                                        </tr>
+                                                            </ul>
+                                                        </td>
+                                                        <td><?php echo $result['description'] ?></td>
+                                                        <td class="td-check">
+                                                            <i class="ri-checkbox-circle-line"></i>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    $i++;
+                                                }
+                                            } else {
+                                                ?>
+                                            <?php
+                                            }
+                                        } else {
+                                            ?>
+                                        <?php
+                                        }
+                                        ?>
 
-                                        <tr>
-                                            <td>07</td>
-                                            <td>Kevin Millett</td>
-                                            <td>Men's Sweatshirt</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-cross">
-                                                <i class="ri-close-circle-line"></i>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>08</td>
-                                            <td>Dillon Bradshaw</td>
-                                            <td>Men's Hoodie t-shirt</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>09</td>
-                                            <td>Lorna Bonner</td>
-                                            <td>Outwear &amp; Coats</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-cross">
-                                                <i class="ri-close-circle-line"></i>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>10</td>
-                                            <td>Richard Johnson</td>
-                                            <td>Slim Fit Plastic Coat </td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>11</td>
-                                            <td>Lorraine McDowell</td>
-                                            <td>Men's Sweatshirt</td>
-                                            <td>
-                                                <ul class="rating">
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star theme-color"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>The Product is No Longer Needed</td>
-                                            <td class="td-check">
-                                                <i class="ri-checkbox-circle-line"></i>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -33,15 +33,19 @@ if (!isset($_SESSION['adminid'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description"
+        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../public/assets_admin/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="../public/assets_admin/images/favicon.png" type="image/x-icon">
     <title>Fastkart - Dashboard</title>
 
     <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- Linear Icon css -->
     <link rel="stylesheet" href="../public/assets_admin/css/linearicon.css">
@@ -94,14 +98,15 @@ if (!isset($_SESSION['adminid'])) {
             <div class="header-wrapper m-0">
                 <div class="header-logo-wrapper p-0">
                     <div class="logo-wrapper">
-                        <a href="../public/admin">
+                        <a href="./index.php">
                             <img class="img-fluid main-logo" src="../public/assets_admin/images/logo/1.png" alt="logo">
-                            <img class="img-fluid white-logo" src="../public/assets_admin/images/logo/1-white.png" alt="logo">
+                            <img class="img-fluid white-logo" src="../public/assets_admin/images/logo/1-white.png"
+                                alt="logo">
                         </a>
                     </div>
                     <div class="toggle-sidebar">
                         <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
-                        <a href="../public/admin">
+                        <a href="./index.php">
                             <img src="../public/assets_admin/images/logo/1.png" class="img-fluid" alt="">
                         </a>
                     </div>
@@ -111,7 +116,8 @@ if (!isset($_SESSION['adminid'])) {
                     <div class="form-group w-100">
                         <div class="Typeahead Typeahead--twitterUsers">
                             <div class="u-posRelative">
-                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search Fastkart .." name="q" title="" autofocus>
+                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
+                                    placeholder="Search Fastkart .." name="q" title="" autofocus>
                                 <i class="close-search" data-feather="x"></i>
                                 <div class="spinner-border Typeahead-spinner" role="status">
                                     <span class="sr-only">Loading...</span>
@@ -140,22 +146,26 @@ if (!isset($_SESSION['adminid'])) {
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span class="pull-right">10 min.</span>
+                                        <i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span
+                                            class="pull-right">10 min.</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-success"></i>Order Complete<span class="pull-right">1 hr</span>
+                                        <i class="fa fa-circle me-2 font-success"></i>Order Complete<span
+                                            class="pull-right">1 hr</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span class="pull-right">3 hr</span>
+                                        <i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span
+                                            class="pull-right">3 hr</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span class="pull-right">6 hr</span>
+                                        <i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span
+                                            class="pull-right">6 hr</span>
                                     </p>
                                 </li>
                                 <li>
@@ -171,7 +181,8 @@ if (!isset($_SESSION['adminid'])) {
                         </li>
                         <li class="profile-nav onhover-dropdown pe-0 me-0">
                             <div class="media profile-media">
-                                <img class="user-profile rounded-circle" src="../public/assets_admin/images/users/4.jpg" alt="">
+                                <img class="user-profile rounded-circle" src="../public/assets_admin/images/users/4.jpg"
+                                    alt="">
                                 <div class="user-name-hide media-body">
                                     <?php
                                     if (isset($_SESSION['adminid'])) {
@@ -180,24 +191,24 @@ if (!isset($_SESSION['adminid'])) {
 
 
                                     ?>
-                                        <?php
+                                    <?php
                                         if (isset($userdeetail)) {
                                             if ($userdeetail && $userdeetail->num_rows > 0) {
                                                 $i = 0;
                                                 while ($result = $userdeetail->fetch_assoc()) {
                                                     # code...
                                         ?>
-                                                    <span><?php echo $result['name'] ?></span>
-                                                <?php
+                                    <span><?php echo $result['name'] ?></span>
+                                    <?php
                                                     $i++;
                                                 }
                                             } else {
                                                 ?>
-                                            <?php
+                                    <?php
                                             }
                                         } else {
                                             ?>
-                                        <?php
+                                    <?php
                                         }
                                         ?>
                                     <?php
@@ -232,7 +243,8 @@ if (!isset($_SESSION['adminid'])) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="javascript:void(0)">
+                                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                        href="javascript:void(0)">
                                         <i data-feather="log-out"></i>
                                         <span>Log out</span>
                                     </a>
@@ -250,8 +262,9 @@ if (!isset($_SESSION['adminid'])) {
                 <div id="sidebarEffect"></div>
                 <div>
                     <div class="logo-wrapper logo-wrapper-center">
-                        <a href="../public/admin" data-bs-original-title="" title="">
-                            <img class="img-fluid for-white" src="../public/assets_admin/images/logo/full-white.png" alt="logo">
+                        <a href="./index.php" data-bs-original-title="" title="">
+                            <img class="img-fluid for-white" src="../public/assets_admin/images/logo/full-white.png"
+                                alt="logo">
                         </a>
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
@@ -261,9 +274,11 @@ if (!isset($_SESSION['adminid'])) {
                         </div>
                     </div>
                     <div class="logo-icon-wrapper">
-                        <a href="../public/admin">
-                            <img class="img-fluid main-logo main-white" src="../public/assets_admin/images/logo/logo.png" alt="logo">
-                            <img class="img-fluid main-logo main-dark" src="../public/assets_admin/images/logo/logo-white.png" alt="logo">
+                        <a href="./index.php">
+                            <img class="img-fluid main-logo main-white"
+                                src="../public/assets_admin/images/logo/logo.png" alt="logo">
+                            <img class="img-fluid main-logo main-dark"
+                                src="../public/assets_admin/images/logo/logo-white.png" alt="logo">
                         </a>
                     </div>
                     <nav class="sidebar-main">
@@ -276,7 +291,7 @@ if (!isset($_SESSION['adminid'])) {
                                 <li class="back-btn"></li>
 
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="../public/admin">
+                                    <a class="sidebar-link sidebar-title link-nav" href="./index.php">
                                         <i class="ri-home-line"></i>
                                         <span>Dashboard</span>
                                     </a>
@@ -366,7 +381,8 @@ if (!isset($_SESSION['adminid'])) {
                 </div>
             </div>
             <!-- Page Sidebar Ends-->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog  modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
