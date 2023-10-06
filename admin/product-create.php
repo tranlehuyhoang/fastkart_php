@@ -1,6 +1,10 @@
 <?php
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
+$product1 = $categoryclass->show_category();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $productclass->insert_product($_POST);
+}
 ?>
 
 <div class="page-body">
@@ -11,7 +15,7 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
             <div class="col-12">
                 <div class="row">
                     <div class="col-sm-8 m-auto">
-                        <form class="theme-form theme-form-2 mega-form" method="POST" action="../public/admin/product" enctype="multipart/form-data">
+                        <form class="theme-form theme-form-2 mega-form" method="POST" action="" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="IjlXCCKF9soniAQd9wZ3xXCpwSfgtKbM0Q4i33vy" autocomplete="off" data-bs-original-title="" title="">
                             <div class="card">
                                 <div class="card-body">
@@ -34,9 +38,27 @@ include_once __DIR__ . '/../inc/_header.admin.inc.php';
                                         <div class="col-sm-9">
                                             <select class="js-example-basic-single w-100" name="category">
                                                 <option disabled="">Category Menu</option>
-                                                <option value="5">rau củ</option>
-                                                <option value="4">rau củ</option>
-                                                <option value="3">rau củ</option>
+                                                <?php
+                                                if (isset($product1)) {
+                                                    if ($product1 && $product1->num_rows > 0) {
+                                                        $i = 0;
+                                                        while ($result = $product1->fetch_assoc()) {
+                                                            # code...
+                                                ?>
+                                                            <option value="<?php echo $result['id'] ?>">
+                                                                <?php echo $result['name'] ?></option>
+                                                        <?php
+                                                            $i++;
+                                                        }
+                                                    } else {
+                                                        ?>
+                                                    <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                <?php
+                                                }
+                                                ?>
 
                                             </select>
                                         </div>

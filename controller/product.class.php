@@ -15,6 +15,38 @@ class product
     }
 
 
+    public function insert_product($data)
+    {
+        $name = $data['name'];
+        $category = $data['category'];
+        $price = $data['price'];
+
+        // Handle file upload
+
+
+        // Handle file upload
+        if ($_FILES['image']['error'] === 0) {
+            $uploadDir = __DIR__ . '/../public/images/';
+            $fileName = $_FILES['image']['name'];
+            $tempFile = $_FILES['image']['tmp_name'];
+            $targetFile = $uploadDir . $fileName;
+
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($tempFile, $targetFile)) {
+                // File uploaded successfully, save the category information in the database
+                $imagePath = 'images/' . $fileName; // Relative path to the image file
+
+                // Insert the category into the database
+                $query = "INSERT INTO product (name, category, price, image) VALUES ('$name', '$category', '$price', '$imagePath')";
+                $this->db->insert($query);
+
+                echo "<script>window.location.href = './product.php';</script>";
+            } else {
+                // Failed to move the uploaded file
+                echo "Failed to upload file.";
+            }
+        }
+    }
     public function show_product()
     {
         $query = "SELECT product.*, category.name AS category_name 
