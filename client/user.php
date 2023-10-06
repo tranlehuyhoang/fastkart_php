@@ -61,7 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                     </div>
                     <div class="profile-box">
                         <div class="cover-image">
-                            <img src="../public/assets_client/images/inner-page/cover-img.jpg" class="img-fluid blur-up lazyload" alt="">
+                            <img src="../public/assets_client/images/inner-page/cover-img.jpg"
+                                class="img-fluid blur-up lazyload" alt="">
                         </div>
 
                         <div class="profile-contain">
@@ -85,35 +86,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                     <ul class="nav nav-pills user-nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="true"><i data-feather="home"></i>
+                            <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-dashboard" type="button" role="tab"
+                                aria-controls="pills-dashboard" aria-selected="true"><i data-feather="home"></i>
                                 DashBoard</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order" type="button" role="tab" aria-controls="pills-order" aria-selected="false"><i data-feather="shopping-bag"></i>Order</button>
+                            <button class="nav-link" id="pills-order-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-order" type="button" role="tab" aria-controls="pills-order"
+                                aria-selected="false"><i data-feather="shopping-bag"></i>Order</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill" data-bs-target="#pills-wishlist" type="button" role="tab" aria-controls="pills-wishlist" aria-selected="false"><i data-feather="heart"></i>
+                            <button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-wishlist" type="button" role="tab" aria-controls="pills-wishlist"
+                                aria-selected="false"><i data-feather="heart"></i>
                                 Wishlist</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false"><i data-feather="credit-card"></i> Saved Card</button>
+                            <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card"
+                                aria-selected="false"><i data-feather="credit-card"></i> Saved Card</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-address-tab" data-bs-toggle="pill" data-bs-target="#pills-address" type="button" role="tab" aria-controls="pills-address" aria-selected="false"><i data-feather="map-pin"></i>
+                            <button class="nav-link" id="pills-address-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-address" type="button" role="tab" aria-controls="pills-address"
+                                aria-selected="false"><i data-feather="map-pin"></i>
                                 Address</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i data-feather="user"></i>
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                aria-selected="false"><i data-feather="user"></i>
                                 Profile</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security" aria-selected="false"><i data-feather="shield"></i>
+                            <button class="nav-link" id="pills-security-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security"
+                                aria-selected="false"><i data-feather="shield"></i>
                                 Privacy</button>
                         </li>
                     </ul>
@@ -125,7 +140,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                     Menu</button>
                 <div class="dashboard-right-sidebar">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
+                        <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel"
+                            aria-labelledby="pills-dashboard-tab">
                             <div class="dashboard-home">
                                 <div class="title">
                                     <h2>My Orders History</h2>
@@ -147,8 +163,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                     <div class="row g-sm-4 g-3">
                                         <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                             <div class="totle-contain">
-                                                <img src="../public/assets_client/images/svg/order.svg" class="img-1 blur-up lazyload" alt="">
-                                                <img src="../public/assets_client/images/svg/order.svg" class="blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/svg/order.svg"
+                                                    class="img-1 blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/svg/order.svg"
+                                                    class="blur-up lazyload" alt="">
                                                 <div class="totle-detail">
                                                     <h5>Total Order</h5>
                                                     <h3>3658</h3>
@@ -158,8 +176,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                                         <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                             <div class="totle-contain">
-                                                <img src="../public/assets_client/images/svg/pending.svg" class="img-1 blur-up lazyload" alt="">
-                                                <img src="../public/assets_client/images/svg/pending.svg" class="blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/svg/pending.svg"
+                                                    class="img-1 blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/svg/pending.svg"
+                                                    class="blur-up lazyload" alt="">
                                                 <div class="totle-detail">
                                                     <h5>Total Pending Order</h5>
                                                     <h3>254</h3>
@@ -169,8 +189,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                                         <div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
                                             <div class="totle-contain">
-                                                <img src="../public/assets_client/images/svg/wishlist.svg" class="img-1 blur-up lazyload" alt="">
-                                                <img src="../public/assets_client/images/svg/wishlist.svg" class="blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/svg/wishlist.svg"
+                                                    class="img-1 blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/svg/wishlist.svg"
+                                                    class="blur-up lazyload" alt="">
                                                 <div class="totle-detail">
                                                     <h5>Total Wishlist</h5>
                                                     <h3>32158</h3>
@@ -187,7 +209,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                 <div class="row g-4">
                                     <div class="col-xxl-6">
                                         <div class="dashboard-contant-title">
-                                            <h4>Contact Information <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a>
+                                            <h4>Contact Information <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile">Edit</a>
                                             </h4>
                                         </div>
                                         <div class="dashboard-detail">
@@ -199,7 +222,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                                     <div class="col-xxl-6">
                                         <div class="dashboard-contant-title">
-                                            <h4>Newsletters <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a></h4>
+                                            <h4>Newsletters <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile">Edit</a></h4>
                                         </div>
                                         <div class="dashboard-detail">
                                             <h6 class="text-content">You are currently not subscribed to any
@@ -209,7 +233,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                                     <div class="col-12">
                                         <div class="dashboard-contant-title">
-                                            <h4>Address Book <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a></h4>
+                                            <h4>Address Book <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile">Edit</a></h4>
                                         </div>
 
                                         <div class="row g-4">
@@ -218,7 +243,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                     <h6 class="text-content">Default Billing Address</h6>
                                                     <h6 class="text-content">You have not set a default billing
                                                         address.</h6>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit Address</a>
+                                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                        data-bs-target="#editProfile">Edit Address</a>
                                                 </div>
                                             </div>
 
@@ -227,7 +253,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                     <h6 class="text-content">Default Shipping Address</h6>
                                                     <h6 class="text-content">You have not set a default shipping
                                                         address.</h6>
-                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit Address</a>
+                                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                        data-bs-target="#editProfile">Edit Address</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -236,7 +263,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="pills-wishlist" role="tabpanel" aria-labelledby="pills-wishlist-tab">
+                        <div class="tab-pane fade show" id="pills-wishlist" role="tabpanel"
+                            aria-labelledby="pills-wishlist-tab">
                             <div class="dashboard-wishlist">
                                 <div class="title">
                                     <h2>My Wishlist History</h2>
@@ -252,7 +280,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/2.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/2.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -286,11 +315,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -306,7 +338,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/3.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/3.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -341,11 +374,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -361,7 +397,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/4.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/4.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -398,11 +435,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -418,7 +458,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/5.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/5.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -453,11 +494,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -473,7 +517,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/6.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/6.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -508,11 +553,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -528,7 +576,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/7.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/7.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -562,11 +611,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -582,7 +634,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             <div class="product-header">
                                                 <div class="product-image">
                                                     <a href="product-left-thumbnail.html">
-                                                        <img src="../public/assets_client/images/cake/product/2.png" class="img-fluid blur-up lazyload" alt="">
+                                                        <img src="../public/assets_client/images/cake/product/2.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
                                                     </a>
 
                                                     <div class="product-header-top">
@@ -616,11 +669,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         </button>
                                                         <div class="cart_qty qty-box">
                                                             <div class="input-group">
-                                                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
                                                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                                                 </button>
-                                                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0">
-                                                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
                                                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
@@ -634,7 +690,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
+                        <div class="tab-pane fade show" id="pills-order" role="tabpanel"
+                            aria-labelledby="pills-order-tab">
                             <div class="dashboard-order">
                                 <div class="title">
                                     <h2>My Orders History</h2>
@@ -654,105 +711,106 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             while ($result = $getinvoice->fetch_assoc()) {
                                                 # code...
                                     ?>
-                                                <div class="order-box dashboard-bg-box">
-                                                    <div class="order-container">
-                                                        <div class="order-icon">
-                                                            <i data-feather="box"></i>
-                                                        </div>
+                                    <div class="order-box dashboard-bg-box">
+                                        <div class="order-container">
+                                            <div class="order-icon">
+                                                <i data-feather="box"></i>
+                                            </div>
 
-                                                        <div class="order-detail">
-                                                            <?php if ($result['payment'] != '1') {
+                                            <div class="order-detail">
+                                                <?php if ($result['payment'] != '1') {
                                                             ?>
-                                                                <a href="./order-success.php?bill=<?php echo $result['id'] ?>">
+                                                <a href="./order-success.php?bill=<?php echo $result['id'] ?>">
 
-                                                                    <h4>#<?php echo $result['code'] ?> <span>Chưa thanh toán</span></h4>
-                                                                </a>
-                                                            <?php
+                                                    <h4>#<?php echo $result['code'] ?> <span>Chưa thanh toán</span></h4>
+                                                </a>
+                                                <?php
                                                             } else {
                                                             ?>
-                                                                <a href="./invoice.php?bill=<?php echo $result['id'] ?>">
-                                                                    <h4>#6858238726628591 <span class="success-bg">Đã thanh
-                                                                            toán</span>
-                                                                    </h4>
-                                                                </a>
-                                                            <?php
+                                                <a href="./invoice.php?bill=<?php echo $result['id'] ?>&action=view">
+                                                    <h4>#6858238726628591 <span class="success-bg">Đã thanh
+                                                            toán</span>
+                                                    </h4>
+                                                </a>
+                                                <?php
                                                             } ?>
 
 
-                                                            <h6 class="text-content">Gouda parmesan caerphilly mozzarella
-                                                                cottage cheese cauliflower cheese taleggio gouda.</h6>
+                                                <h6 class="text-content">Gouda parmesan caerphilly mozzarella
+                                                    cottage cheese cauliflower cheese taleggio gouda.</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-order-detail">
+                                            <a href="product-left-thumbnail.html" class="order-image">
+                                                <img src="../public/assets_client/box.png" style="width: 200px"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+
+                                            <div class="order-wrap">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h3>Fantasy Crunchy Choco Chip Cookies</h3>
+                                                </a>
+                                                <p class="text-content">Cheddar dolcelatte gouda. Macaroni cheese
+                                                    cheese strings feta halloumi cottage cheese jarlsberg cheese
+                                                    triangles say cheese.</p>
+                                                <ul class="product-size">
+                                                    <li>
+                                                        <div class="size-box">
+                                                            <h6 class="text-content">Price : </h6>
+                                                            <h5>$20.68</h5>
                                                         </div>
-                                                    </div>
+                                                    </li>
 
-                                                    <div class="product-order-detail">
-                                                        <a href="product-left-thumbnail.html" class="order-image">
-                                                            <img src="../public/assets_client/box.png" style="width: 200px" class="blur-up lazyload" alt="">
-                                                        </a>
-
-                                                        <div class="order-wrap">
-                                                            <a href="product-left-thumbnail.html">
-                                                                <h3>Fantasy Crunchy Choco Chip Cookies</h3>
-                                                            </a>
-                                                            <p class="text-content">Cheddar dolcelatte gouda. Macaroni cheese
-                                                                cheese strings feta halloumi cottage cheese jarlsberg cheese
-                                                                triangles say cheese.</p>
-                                                            <ul class="product-size">
-                                                                <li>
-                                                                    <div class="size-box">
-                                                                        <h6 class="text-content">Price : </h6>
-                                                                        <h5>$20.68</h5>
-                                                                    </div>
-                                                                </li>
-
-                                                                <li>
-                                                                    <div class="size-box">
-                                                                        <h6 class="text-content">Rate : </h6>
-                                                                        <div class="product-rating ms-2">
-                                                                            <ul class="rating">
-                                                                                <li>
-                                                                                    <i data-feather="star" class="fill"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i data-feather="star" class="fill"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i data-feather="star" class="fill"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i data-feather="star" class="fill"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i data-feather="star"></i>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-
-                                                                <li>
-                                                                    <div class="size-box">
-                                                                        <h6 class="text-content">Sold By : </h6>
-                                                                        <h5>Fresho</h5>
-                                                                    </div>
-                                                                </li>
-
-                                                                <li>
-                                                                    <div class="size-box">
-                                                                        <h6 class="text-content">Quantity : </h6>
-                                                                        <h5>250 G</h5>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
+                                                    <li>
+                                                        <div class="size-box">
+                                                            <h6 class="text-content">Rate : </h6>
+                                                            <div class="product-rating ms-2">
+                                                                <ul class="rating">
+                                                                    <li>
+                                                                        <i data-feather="star" class="fill"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i data-feather="star" class="fill"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i data-feather="star" class="fill"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i data-feather="star" class="fill"></i>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i data-feather="star"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                    </li>
 
-                                            <?php
+                                                    <li>
+                                                        <div class="size-box">
+                                                            <h6 class="text-content">Sold By : </h6>
+                                                            <h5>Fresho</h5>
+                                                        </div>
+                                                    </li>
+
+                                                    <li>
+                                                        <div class="size-box">
+                                                            <h6 class="text-content">Quantity : </h6>
+                                                            <h5>250 G</h5>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <?php
                                                 $i++;
                                             }
                                         } else {
                                             ?>
-                                        <?php
+                                    <?php
                                         }
                                     } else {
                                         ?>
@@ -767,7 +825,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="pills-address" role="tabpanel" aria-labelledby="pills-address-tab">
+                        <div class="tab-pane fade show" id="pills-address" role="tabpanel"
+                            aria-labelledby="pills-address-tab">
                             <div class="dashboard-address">
                                 <div class="title title-flex">
                                     <div>
@@ -779,7 +838,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         </span>
                                     </div>
 
-                                    <button class="btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 mt-3" data-bs-toggle="modal" data-bs-target="#add-address"><i data-feather="plus" class="me-2"></i> Add New Address</button>
+                                    <button class="btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 mt-3"
+                                        data-bs-toggle="modal" data-bs-target="#add-address"><i data-feather="plus"
+                                            class="me-2"></i> Add New Address</button>
                                 </div>
 
                                 <div class="row g-sm-4 g-3">
@@ -787,7 +848,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="address-box">
                                             <div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault2" checked>
+                                                    <input class="form-check-input" type="radio" name="jack"
+                                                        id="flexRadioDefault2" checked>
                                                 </div>
 
                                                 <div class="label">
@@ -824,9 +886,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             </div>
 
                                             <div class="button-group">
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#editProfile"><i data-feather="edit"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile"><i data-feather="edit"></i>
                                                     Edit</button>
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
                                                     Remove</button>
                                             </div>
                                         </div>
@@ -836,7 +900,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="address-box">
                                             <div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault3">
+                                                    <input class="form-check-input" type="radio" name="jack"
+                                                        id="flexRadioDefault3">
                                                 </div>
 
                                                 <div class="label">
@@ -872,9 +937,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             </div>
 
                                             <div class="button-group">
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#editProfile"><i data-feather="edit"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile"><i data-feather="edit"></i>
                                                     Edit</button>
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
                                                     Remove</button>
                                             </div>
                                         </div>
@@ -884,7 +951,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="address-box">
                                             <div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault4">
+                                                    <input class="form-check-input" type="radio" name="jack"
+                                                        id="flexRadioDefault4">
                                                 </div>
 
                                                 <div class="label">
@@ -920,9 +988,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             </div>
 
                                             <div class="button-group">
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#editProfile"><i data-feather="edit"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile"><i data-feather="edit"></i>
                                                     Edit</button>
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
                                                     Remove</button>
                                             </div>
                                         </div>
@@ -932,7 +1002,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="address-box">
                                             <div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault5">
+                                                    <input class="form-check-input" type="radio" name="jack"
+                                                        id="flexRadioDefault5">
                                                 </div>
 
                                                 <div class="label">
@@ -969,9 +1040,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             </div>
 
                                             <div class="button-group">
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#editProfile"><i data-feather="edit"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile"><i data-feather="edit"></i>
                                                     Edit</button>
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
                                                     Remove</button>
                                             </div>
                                         </div>
@@ -981,7 +1054,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="address-box">
                                             <div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="jack" id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" name="jack"
+                                                        id="flexRadioDefault1">
                                                 </div>
 
                                                 <div class="label">
@@ -1018,9 +1092,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             </div>
 
                                             <div class="button-group">
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#editProfile"><i data-feather="edit"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#editProfile"><i data-feather="edit"></i>
                                                     Edit</button>
-                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal" data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
+                                                <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
                                                     Remove</button>
                                             </div>
                                         </div>
@@ -1029,7 +1105,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
+                        <div class="tab-pane fade show" id="pills-card" role="tabpanel"
+                            aria-labelledby="pills-card-tab">
                             <div class="dashboard-card">
                                 <div class="title title-flex">
                                     <div>
@@ -1041,7 +1118,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         </span>
                                     </div>
 
-                                    <button class="btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 mt-3" data-bs-toggle="modal" data-bs-target="#editCard"><i data-feather="plus" class="me-2"></i> Add New Card</button>
+                                    <button class="btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 mt-3"
+                                        data-bs-toggle="modal" data-bs-target="#editCard"><i data-feather="plus"
+                                            class="me-2"></i> Add New Card</button>
                                 </div>
 
                                 <div class="row g-4">
@@ -1070,20 +1149,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         <h5>Audrey Carol</h5>
                                                     </div>
                                                     <div class="card-img">
-                                                        <img src="../public/assets_client/images/payment-icon/1.jpg" class="img-fluid blur-up lazyloaded" alt="">
+                                                        <img src="../public/assets_client/images/payment-icon/1.jpg"
+                                                            class="img-fluid blur-up lazyloaded" alt="">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="edit-card">
-                                                <a data-bs-toggle="modal" data-bs-target="#editCard" href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#removeProfile"><i class="far fa-minus-square"></i>
+                                                <a data-bs-toggle="modal" data-bs-target="#editCard"
+                                                    href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
+                                                <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i class="far fa-minus-square"></i>
                                                     delete</a>
                                             </div>
                                         </div>
 
                                         <div class="edit-card-mobile">
-                                            <a data-bs-toggle="modal" data-bs-target="#editCard" href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
+                                            <a data-bs-toggle="modal" data-bs-target="#editCard"
+                                                href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
                                             <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
                                                 delete</a>
                                         </div>
@@ -1114,20 +1197,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         <h5>Leah Heather</h5>
                                                     </div>
                                                     <div class="card-img">
-                                                        <img src="../public/assets_client/images/payment-icon/2.jpg" class="img-fluid blur-up lazyloaded" alt="">
+                                                        <img src="../public/assets_client/images/payment-icon/2.jpg"
+                                                            class="img-fluid blur-up lazyloaded" alt="">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="edit-card">
-                                                <a data-bs-toggle="modal" data-bs-target="#editCard" href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#removeProfile"><i class="far fa-minus-square"></i>
+                                                <a data-bs-toggle="modal" data-bs-target="#editCard"
+                                                    href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
+                                                <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i class="far fa-minus-square"></i>
                                                     delete</a>
                                             </div>
                                         </div>
 
                                         <div class="edit-card-mobile">
-                                            <a data-bs-toggle="modal" data-bs-target="#editCard" href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
+                                            <a data-bs-toggle="modal" data-bs-target="#editCard"
+                                                href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
                                             <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
                                                 delete</a>
                                         </div>
@@ -1158,20 +1245,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                         <h5>mark jecno</h5>
                                                     </div>
                                                     <div class="card-img">
-                                                        <img src="../public/assets_client/images/payment-icon/3.jpg" class="img-fluid blur-up lazyloaded" alt="">
+                                                        <img src="../public/assets_client/images/payment-icon/3.jpg"
+                                                            class="img-fluid blur-up lazyloaded" alt="">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="edit-card">
-                                                <a data-bs-toggle="modal" data-bs-target="#editCard" href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
-                                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#removeProfile"><i class="far fa-minus-square"></i>
+                                                <a data-bs-toggle="modal" data-bs-target="#editCard"
+                                                    href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
+                                                <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                    data-bs-target="#removeProfile"><i class="far fa-minus-square"></i>
                                                     delete</a>
                                             </div>
                                         </div>
 
                                         <div class="edit-card-mobile">
-                                            <a data-bs-toggle="modal" data-bs-target="#editCard" href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
+                                            <a data-bs-toggle="modal" data-bs-target="#editCard"
+                                                href="javascript:void(0)"><i class="far fa-edit"></i> edit</a>
                                             <a href="javascript:void(0)"><i class="far fa-minus-square"></i>
                                                 delete</a>
                                         </div>
@@ -1180,7 +1271,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="tab-pane fade show" id="pills-profile" role="tabpanel"
+                            aria-labelledby="pills-profile-tab">
                             <div class="dashboard-profile">
                                 <div class="title">
                                     <h2>My Profile</h2>
@@ -1219,7 +1311,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                             </div>
                                         </div>
 
-                                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a>
+                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                            data-bs-target="#editProfile">Edit</a>
                                     </div>
 
                                     <div class="location-profile">
@@ -1298,14 +1391,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                                             <td>Email :</td>
                                                             <td>
                                                                 <a href="javascript:void(0)">vicki.pope@gmail.com
-                                                                    <span data-bs-toggle="modal" data-bs-target="#editProfile">Edit</span></a>
+                                                                    <span data-bs-toggle="modal"
+                                                                        data-bs-target="#editProfile">Edit</span></a>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Password :</td>
                                                             <td>
                                                                 <a href="javascript:void(0)">●●●●●●
-                                                                    <span data-bs-toggle="modal" data-bs-target="#editProfile">Edit</span></a>
+                                                                    <span data-bs-toggle="modal"
+                                                                        data-bs-target="#editProfile">Edit</span></a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -1315,7 +1410,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
 
                                         <div class="col-xxl-5">
                                             <div class="profile-image">
-                                                <img src="../public/assets_client/images/inner-page/dashboard-profile.png" class="img-fluid blur-up lazyload" alt="">
+                                                <img src="../public/assets_client/images/inner-page/dashboard-profile.png"
+                                                    class="img-fluid blur-up lazyload" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -1324,7 +1420,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab">
+                        <div class="tab-pane fade show" id="pills-security" role="tabpanel"
+                            aria-labelledby="pills-security-tab">
                             <div class="dashboard-privacy">
                                 <div class="dashboard-bg-box">
                                     <div class="dashboard-title mb-4">
@@ -1335,7 +1432,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="d-flex align-items-start">
                                             <h6>Allows others to see my profile</h6>
                                             <div class="form-check form-switch switch-radio ms-auto">
-                                                <input class="form-check-input" type="checkbox" role="switch" id="redio" aria-checked="false">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="redio"
+                                                    aria-checked="false">
                                                 <label class="form-check-label" for="redio"></label>
                                             </div>
                                         </div>
@@ -1347,7 +1445,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="d-flex align-items-start">
                                             <h6>who has save this profile only that people see my profile</h6>
                                             <div class="form-check form-switch switch-radio ms-auto">
-                                                <input class="form-check-input" type="checkbox" role="switch" id="redio2" aria-checked="false">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                    id="redio2" aria-checked="false">
                                                 <label class="form-check-label" for="redio2"></label>
                                             </div>
                                         </div>
@@ -1368,7 +1467,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="d-flex align-items-start">
                                             <h6>Deleting Your Account Will Permanently</h6>
                                             <div class="form-check form-switch switch-radio ms-auto">
-                                                <input class="form-check-input" type="checkbox" role="switch" id="redio3" aria-checked="false">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                    id="redio3" aria-checked="false">
                                                 <label class="form-check-label" for="redio3"></label>
                                             </div>
                                         </div>
@@ -1380,7 +1480,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['vnp_ResponseCode'])) {
                                         <div class="d-flex align-items-start">
                                             <h6>Deleting Your Account Will Temporary</h6>
                                             <div class="form-check form-switch switch-radio ms-auto">
-                                                <input class="form-check-input" type="checkbox" role="switch" id="redio4" aria-checked="false">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                    id="redio4" aria-checked="false">
                                                 <label class="form-check-label" for="redio4"></label>
                                             </div>
                                         </div>

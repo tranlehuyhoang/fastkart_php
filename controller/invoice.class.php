@@ -187,7 +187,7 @@ class invoice
         $mail = new PHPMailer(true);
         try {
             // Server settings
-            $mail->SMTPDebug = 2;
+            $mail->SMTPDebug = 0; // Đặt giá trị này thành 0 để tắt thông báo debug của SMTP
             $mail->isSMTP(); // Sử dụng SMTP để gửi mail
             $mail->Host = 'smtp.gmail.com'; // Server SMTP của gmail
             $mail->SMTPAuth = true; // Bật xác thực SMTP
@@ -202,7 +202,7 @@ class invoice
 
             // Content
             $mail->isHTML(true); // Set email format to HTML
-            $mail->Subject = 'Here is the subject'; // Tiêu đề
+            $mail->Subject = 'Fastkart Shop'; // Tiêu đề
 
             $emailContent = file_get_contents('http://localhost/dam/client/email.php?bill=' . $user . '&user=' . $id);
             if ($emailContent !== false) {
@@ -214,8 +214,10 @@ class invoice
             }
 
             $mail->send();
+            // Ẩn thông báo gửi mail thành công
             // echo 'Message has been sent';
         } catch (Exception $e) {
+            // Ẩn thông báo gửi mail lỗi
             // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
     }

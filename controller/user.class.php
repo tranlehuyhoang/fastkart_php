@@ -154,6 +154,10 @@ class user
     {
         unset($_SESSION['userid']);
     }
+    public function logoutadmin()
+    {
+        unset($_SESSION['adminid']);
+    }
     public function loginuser($data)
     {
         $userpass = mysqli_real_escape_string($this->db->link, $data['pass']);
@@ -170,6 +174,35 @@ class user
                 $alert = "<div class='alert alert-success' role='alert'>Login Successfully</div>";
                 echo "<script>window.location.href = './home.php';</script>";
                 exit();
+            } else {
+                $alert = "<div class='alert alert-danger' role='alert'>Invalid Password</div>";
+            }
+        } else {
+            $alert = "<div class='alert alert-danger' role='alert'>Invalid Email</div>";
+        }
+
+        return $alert;
+    }
+    public function adminlogin($data)
+    {
+        $userpass = mysqli_real_escape_string($this->db->link, $data['pass']);
+        $useremail = mysqli_real_escape_string($this->db->link, $data['email']);
+        $query = "SELECT * FROM users WHERE email = '$useremail'";
+        $result = $this->db->select($query);
+
+        if ($result && $result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $hashedPassword = $user['password'];
+            $role = $user['role'];
+
+            if (password_verify($userpass, $hashedPassword)) {
+                if ($role == '1') {
+                    # code...
+                    $_SESSION['adminid'] = $user['id'];
+                    $alert = "<div class='alert alert-success' role='alert'>Login Successfully</div>";
+                    echo "<script>window.location.href = './index.php';</script>";
+                    exit();
+                }
             } else {
                 $alert = "<div class='alert alert-danger' role='alert'>Invalid Password</div>";
             }
