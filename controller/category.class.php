@@ -51,29 +51,36 @@ class category
 
     public function update_category($data, $id)
     {
-        $categoryname = mysqli_real_escape_string($this->db->link, $data['categoryname']);
+        $name = mysqli_real_escape_string($this->db->link, $data['name']);
         $id = mysqli_real_escape_string($this->db->link, $id);
 
-        if (empty($categoryname)) {
-            $arlet = "<div class='alert alert-danger' role='alert'>Category name empty</div>";
-            return $arlet;
-        } else {
-            $query = "UPDATE tbl_category SET categoryname = '$categoryname' WHERE categoryid = '$id'";
-            $result = $this->db->update($query);
-            if ($result) {
-                $arlet = "<div class='alert alert-success' role='alert'>Update Category Successfully</div>";
-                return $arlet;
-            } else {
-                $arlet = "<div class='alert alert-danger' role='alert'>Error</div>";
+        if ($_FILES['image']['error'] === 0) {
+            $uploadDir = __DIR__ . '/../public/images/';
+            $fileName = $_FILES['image']['name'];
+            $tempFile = $_FILES['image']['tmp_name'];
+            $targetFile = $uploadDir . $fileName;
 
-                return $arlet;
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($tempFile, $targetFile)) {
+                // File uploaded successfully, save the category information in the database
+                $imagePath = 'images/' . $fileName; // Relative path to the image file
+
+                // Insert the category into the database
+                $query = "UPDATE category SET name = '$name', image = '$imagePath' WHERE id = '$id'";
+                $result = $this->db->update($query);
             }
+        } else {
+            // No image uploaded, only update the name
+            $query = "UPDATE category SET name = '$name' WHERE id = '$id'";
+            $result = $this->db->update($query);
         }
+
+        echo "<script>window.location.href = './category.php';</script>";
     }
     public function delete_category($id)
     {
         $id = mysqli_real_escape_string($this->db->link, $id);
-        $query = "DELETE FROM tbl_category WHERE categoryid = '$id'";
+        $query = "DELETE FROM category WHERE id = '$id'";
         $result = $this->db->delete($query);
 
 
@@ -90,7 +97,7 @@ class category
     public function getcatbyId($id)
 
     {
-        $query = "SELECT * FROM tbl_category WHERE categoryid = '$id'";
+        $query = "SELECT * FROM category WHERE id = '$id'";
         $result = $this->db->select($query);
 
         return $result;

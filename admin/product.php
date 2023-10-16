@@ -2,6 +2,10 @@
 
 include_once __DIR__ . '/../inc/_header.admin.inc.php';
 $product1 = $productclass->show_product();
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete'])) {
+    $productclass->delete_product($_GET['delete']);
+    echo "<script>window.location.href = './product.php';</script>";
+}
 ?>
 
 
@@ -52,51 +56,52 @@ $product1 = $productclass->show_product();
                                                 while ($result = $product1->fetch_assoc()) {
                                                     # code...
                                         ?>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="table-image">
-                                                                <img src="../public/<?php echo $result['image'] ?>" class="img-fluid" alt="">
-                                                            </div>
-                                                        </td>
+                                        <tr>
+                                            <td>
+                                                <div class="table-image">
+                                                    <img src="../public/<?php echo $result['image'] ?>"
+                                                        class="img-fluid" alt="">
+                                                </div>
+                                            </td>
 
-                                                        <td><?php echo $result['name'] ?></td>
-                                                        <td>rau củ</td>
-
-
-
-
-                                                        <td class="td-price">$<?php echo $result['price'] ?></td>
+                                            <td><?php echo $result['name'] ?></td>
+                                            <td>rau củ</td>
 
 
 
-                                                        <td>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="order-detail.html">
-                                                                        <i class="ri-eye-line"></i>
-                                                                    </a>
-                                                                </li>
 
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <i class="ri-pencil-line"></i>
-                                                                    </a>
-                                                                </li>
+                                            <td class="td-price">$<?php echo $result['price'] ?></td>
 
-                                                                <li>
-                                                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
-                                                                        <i class="ri-delete-bin-line"></i>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </td>
-                                                    </tr>
-                                                <?php
+
+
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="order-detail.html">
+                                                            <i class="ri-eye-line"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="./product-edit.php?proid=<?php echo $result['id'] ?>">
+                                                            <i class="ri-pencil-line"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="./product.php?delete=<?php echo $result['id'] ?>">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <?php
                                                     $i++;
                                                 }
                                             } else {
                                                 ?>
-                                            <?php
+                                        <?php
                                             }
                                         } else {
                                             ?>
